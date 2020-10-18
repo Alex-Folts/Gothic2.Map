@@ -310,7 +310,7 @@
 		var mapUrl = './maps/map_06_2/{g}/{z}-{x}-{y}.jpg';
 		var mapUrl2 = './maps/map_07_2/{g}/{z}-{x}-{y}.jpg';
 		var	mapAttrib = 'Map Gothic 2',
-			osm = L.tileLayer.zoomify(mapUrl, {
+			osm = L.tileLayer.zoomify(mapUrl2, {
 				width: 8192,
 				height: 8192,
 				tolerance: 0.7,
@@ -430,20 +430,21 @@
 		
 		var mapStateButton = L.easyButton({
 			states: [{
-				stateName: 'art-map',
-				icon:      'fas fa-map',
-				title:     'switch map style',
-				onClick: function(btn, map) {
-					osm.setUrl(mapUrl2);
-					btn.state('render-map');
-				}
-			}, {
 				stateName: 'render-map',
 				icon:      'far fa-map',
 				title:     'switch map style',
 				onClick: function(btn, map) {
 					osm.setUrl(mapUrl);
 					btn.state('art-map');
+				}
+			},
+			{
+				stateName: 'art-map',
+				icon:      'fas fa-map',
+				title:     'switch map style',
+				onClick: function(btn, map) {
+					osm.setUrl(mapUrl2);
+					btn.state('render-map');
 				}
 			}]
 		});
