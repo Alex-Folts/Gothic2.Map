@@ -1,0 +1,645 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gothic 2 Interactive Map</title>
+    <link rel="stylesheet" href="./dist/leaflet-1.7.1/leaflet.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
+    <![endif]-->
+	
+	<link rel="stylesheet" href="./dist/MarkerCluster.css" />
+	<link rel="stylesheet" href="./dist/MarkerCluster.Default.css" />
+	
+	<link rel="stylesheet" href="./dist/easy-button.css" />
+	<link rel="stylesheet" href="./dist/leaflet-tag-filter-button.css" />
+	
+	<link rel="stylesheet" href="./dist/fontawesome-free-5.15.1-web/css/all.css">
+
+	<script src="./dist/tagify-3.20.0/dist/tagify.min.js"></script>
+	<script src="./dist/tagify-3.20.0/dist/tagify.polyfills.min.js"></script>
+	<link href="./dist/tagify-3.20.0/dist/tagify.css" rel="stylesheet" type="text/css" />
+	
+    <style type="text/css">
+        html, body, #map_container {
+			font: 14px arial;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+			background: black;
+        }
+		
+		.leaflet-bar {
+		  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+		  border-radius: 5px;
+		}
+		
+		.my-control {
+		  background: #fff;
+		  padding: 4px;
+		  height: 100%;
+		}
+
+		.tagify{ 
+		  line-height:normal; 
+		  padding: 4px;
+		  min-width: 200px;
+		  max-width: 640px;
+		}
+		
+		.tags-look .tagify__dropdown__item{
+		  display: inline-block;
+		  border-radius: 3px;
+		  padding: .3em .5em;
+		  border: 1px solid #CCC;
+		  background: #F3F3F3;
+		  margin: .2em;
+		  font-size: .85em;
+		  color: black;
+		  transition: 0s;
+		}
+
+		.tags-look .tagify__dropdown__item--active{
+		  color: black;
+		}
+
+		.tags-look .tagify__dropdown__item:hover{
+		  background: lightyellow;
+		  border-color: black;
+		}
+    </style>
+</head>
+
+<body>
+    <div id="map_container"></div>
+    <script type="text/javascript" src="./dist/leaflet-1.7.1/leaflet.js"></script>
+	<script type="text/javascript" src="./dist/leaflet.markercluster-src.js"></script>
+    <script type="text/javascript" src="./dist/L.TileLayer.Zoomify.js"></script>  
+	<script type="text/javascript" src="./dist/easy-button.js"></script>
+	<script type="text/javascript" src="./dist/leaflet-tag-filter-button.js"></script>
+    <script type="text/javascript">
+
+
+		////////////////////////////////////////////////
+		// Quick and dirty implementation of enableMCG
+		////////////////////////////////////////////////
+		L.Control.TagFilterButton.include({
+		  // Goal: read from MCG instead of from _map
+		  enableMCG: function(mcgInstance) {
+			this.registerCustomSource({
+			  name: 'mcg',
+			  source: {
+				mcg: mcgInstance,
+				hide: function(layerSource) {
+				  var releatedLayers = [];
+
+				  for (
+					var r = 0; r < this._releatedFilterButtons.length; r++
+				  ) {
+					releatedLayers = releatedLayers.concat(
+					  this._releatedFilterButtons[r].getInvisibles()
+					);
+				  }
+
+				  var toBeRemovedFromInvisibles = [],
+					i,
+					toAdd = [];
+
+				  for (var i = 0; i < this._invisibles.length; i++) {
+					if (releatedLayers.indexOf(this._invisibles[i]) == -1) {
+					  for (
+						var j = 0; j < this._invisibles[i].options.tags.length; j++
+					  ) {
+						if (
+						  this._selectedTags.length == 0 ||
+						  this._selectedTags.indexOf(
+							this._invisibles[i].options.tags[j]
+						  ) !== -1
+						) {
+						  //this._map.addLayer(this._invisibles[i]);
+						  toAdd.push(this._invisibles[i]);
+						  toBeRemovedFromInvisibles.push(i);
+						  break;
+						}
+					  }
+					}
+				  }
+
+				  // Batch add into MCG
+				  layerSource.mcg.addLayers(toAdd);
+
+				  while (toBeRemovedFromInvisibles.length > 0) {
+					this._invisibles.splice(
+					  toBeRemovedFromInvisibles.pop(),
+					  1
+					);
+				  }
+
+				  var removedmcg = [];
+				  var totalCount = 0;
+
+				  if (this._selectedTags.length > 0) {
+					//this._map.eachLayer(
+					layerSource.mcg.eachLayer(
+					  function(layer) {
+						if (
+						  layer &&
+						  layer.options &&
+						  layer.options.tags
+						) {
+						  totalCount++;
+						  if (releatedLayers.indexOf(layer) == -1) {
+							var found = false;
+							for (
+							  var i = 0; i < layer.options.tags.length; i++
+							) {
+							  found =
+								this._selectedTags.indexOf(
+								  layer.options.tags[i]
+								) !== -1;
+							  if (found) {
+								break;
+							  }
+							}
+							if (!found) {
+							  removedmcg.push(layer);
+							}
+						  }
+						}
+					  }.bind(this)
+					);
+
+					for (i = 0; i < removedmcg.length; i++) {
+					  //this._map.removeLayer(removedmcg[i]);
+					  this._invisibles.push(removedmcg[i]);
+					}
+
+					// Batch remove from MCG
+					layerSource.mcg.removeLayers(removedmcg);
+				  }
+
+				  return totalCount - removedmcg.length;
+				},
+			  },
+			});
+
+			this.layerSources.currentSource = this.layerSources.sources[
+			  'mcg'
+			];
+		  },
+		});
+
+		////////////////////////////////////////////////
+		// Fix for TagFilterButton
+		////////////////////////////////////////////////
+		L.Control.TagFilterButton.include({
+		  _prepareLayerSources: function() {
+			this.layerSources = new Object();
+			this.layerSources['sources'] = new Object();
+
+			this.registerCustomSource({
+			  name: 'default',
+			  source: {
+				hide: function() {
+				  var releatedLayers = [];
+
+				  for (var r = 0; r < this._releatedFilterButtons.length; r++) {
+					releatedLayers = releatedLayers.concat(
+					  this._releatedFilterButtons[r].getInvisibles()
+					);
+				  }
+
+				  var toBeRemovedFromInvisibles = [],
+					i;
+
+				  // "Fix": add var
+				  for (var i = 0; i < this._invisibles.length; i++) {
+					if (releatedLayers.indexOf(this._invisibles[i]) == -1) {
+					  // "Fix": add var
+					  for (var j = 0; j < this._invisibles[i].options.tags.length; j++) {
+						if (
+						  this._selectedTags.length == 0 ||
+						  this._selectedTags.indexOf(
+							this._invisibles[i].options.tags[j]
+						  ) !== -1
+						) {
+						  this._map.addLayer(this._invisibles[i]);
+						  toBeRemovedFromInvisibles.push(i);
+						  break;
+						}
+					  }
+					}
+				  }
+
+				  while (toBeRemovedFromInvisibles.length > 0) {
+					this._invisibles.splice(toBeRemovedFromInvisibles.pop(), 1);
+				  }
+
+				  var removedmcg = [];
+				  var totalCount = 0;
+
+				  if (this._selectedTags.length > 0) {
+					this._map.eachLayer(
+					  function(layer) {
+						if (layer && layer.options && layer.options.tags) {
+						  totalCount++;
+						  if (releatedLayers.indexOf(layer) == -1) {
+							var found = false;
+							for (var i = 0; i < layer.options.tags.length; i++) {
+							  found =
+								this._selectedTags.indexOf(layer.options.tags[i]) !==
+								-1;
+							  if (found) {
+								break;
+							  }
+							}
+							if (!found) {
+							  removedmcg.push(layer);
+							}
+						  }
+						}
+					  }.bind(this)
+					);
+
+					for (i = 0; i < removedmcg.length; i++) {
+					  this._map.removeLayer(removedmcg[i]);
+					  this._invisibles.push(removedmcg[i]);
+					}
+				  }
+
+				  return totalCount - removedmcg.length;
+				},
+			  },
+			});
+			this.layerSources.currentSource = this.layerSources.sources['default'];
+		  },
+		});
+
+
+		//override filter
+		L.Control.TagFilterButton.include({
+			filter: function() {
+/*				var checkboxContainer = (this._container.getElementsByTagName('div')[0]),
+					childCount = this._tagEl.childElementCount,
+					children = this._tagEl.children,
+					childCheckbox, i, j;
+
+				this._selectedTags = [];
+
+				for (i = 0; i < childCount; i++) {
+					childCheckbox = children[i];
+					if (childCheckbox && childCheckbox.dataset.checked) {
+						this._selectedTags.push(childCheckbox.dataset.value);
+					}
+				}*/
+
+				var filteredCount = this.layerSources.currentSource.hide.call(this, this.layerSources.currentSource);
+				this._showFilterInfo(filteredCount);
+
+				if (this.options.onSelectionComplete && typeof this.options.onSelectionComplete == 'function') {
+					this.options.onSelectionComplete.call(this, this._selectedTags);
+				}
+				console.log('filter:');
+			},
+		});
+
+
+
+		////////////////////////////////////////////////////
+		var mapUrl = './maps/map_06_2/{g}/{z}-{x}-{y}.jpg';
+		var mapUrl2 = './maps/map_07_2/{g}/{z}-{x}-{y}.jpg';
+		var	mapAttrib = 'Map Gothic 2',
+			osm = L.tileLayer.zoomify(mapUrl, {
+				width: 8192,
+				height: 8192,
+				tolerance: 0.7,
+				noWrap: true,
+				maxZoom: 6,
+				minZoom: 2,
+				attribution: mapAttrib,
+			});
+		  
+		// initialize the map on the "map" div with a given center and zoom
+		var releatedUsageMap = L.map('map_container', {crs: L.CRS.Simple,  zoomControl: false}).setView(new L.LatLng(-128,128), 2).addLayer(osm);
+
+		var zoomControl = new L.Control.Zoom({ position: 'bottomleft' }).addTo(releatedUsageMap);
+
+		var mcg = L.markerClusterGroup({ chunkedLoading: true });
+		releatedUsageMap.addLayer(mcg);
+		
+		
+		//custom controlls
+		L.Control.MyControl = L.Control.extend({
+			onAdd: function(map) {
+				var el = L.DomUtil.create('div', 'leaflet-bar my-control');
+				el.innerHTML = '<input name="input-custom-dropdown" value="item" placeholder="tags:">';
+				return el;
+			},
+
+			onRemove: function(map) {
+				// Nothing to do here
+			}
+		});
+
+		L.control.myControl = function(opts) {
+			return new L.Control.MyControl(opts);
+		}
+		
+		L.control.myControl({ position: 'topleft' }).addTo(releatedUsageMap);		
+
+		
+		var filteredItems = [];
+		var filteredTags = [];
+		var filteredItemClasses = [];
+		
+		//tagify stuff
+		var whitelist = [];
+		// The DOM element you wish to replace with Tagify
+		var input = document.querySelector('input[name="input-custom-dropdown"]');
+		// init Tagify script on the above inputs
+		var tagify = new Tagify(input, {
+			enforceWhitelist: true,
+			whitelist: whitelist,
+			maxTags: 10,
+			dropdown: {
+				maxItems: 200,           // <- mixumum allowed rendered suggestions
+				classname: "tags-look", // <- custom classname for this dropdown, so it could be targeted
+				enabled: 0,             // <- show suggestions on focus
+				closeOnSelect: false    // <- do not hide the suggestions dropdown once an item has been selected
+			},
+			templates: {
+				dropdownItem( item ){//custom dropdown item with semirandom color
+					return `<div ${this.getAttributes(item)}
+						class='${this.settings.classNames.dropdownItem} ${item.class ? item.class : ""}'
+						tabindex="0" style="background:${getRandomColor(item.value)}" 
+						role="option">${item.value}</div>`
+				},
+				  
+				tag(tagData){//custom tag item with semirandom color
+					return `<tag title="${(tagData.title || tagData.value)}"
+						contenteditable='false'
+						spellcheck='false'
+						tabIndex="-1"
+						class="${this.settings.classNames.tag} ${tagData.class ? tagData.class : ""}"
+						${this.getAttributes(tagData)}
+						style="--tag-bg:${getRandomColor(tagData.value)}">
+						<x title='' class="${this.settings.classNames.tagX}" role='button' aria-label='remove tag'></x>
+						<div>
+							<span class="${this.settings.classNames.tagText}">${tagData.value}</span>
+						</div>
+					</tag>`
+				}
+			}
+		});
+		
+		// tag added callback
+		function onAddTag(e){
+//			console.log("onAddTag: ", e.detail);
+			tagifyTagsListUpdated();
+//			console.log("original input value: ", input.value)
+//			tagify.off('add', onAddTag) // exmaple of removing a custom Tagify event
+		}
+		
+		// tag remvoed callback
+		function onRemoveTag(e){
+//			console.log("onRemoveTag:", e.detail, "tagify instance value:", tagify.value)
+			tagifyTagsListUpdated();
+		}
+		
+		//filter everything
+		function tagifyTagsListUpdated() {
+			filteredItems = filterItemsList(itemsInfo, getTagifyCurrentTagsList(tagify));
+			filteredTags = getTagsFromItemsList(filteredItems);
+			tagify.settings.whitelist = filteredTags;
+			filteredItemClasses = getItemClassesList(filteredItems);
+			statusFilterButton._selectedTags = filteredItemClasses;
+			statusFilterButton.filter();	
+		}
+		
+///		L.marker([-128.0, 128.0]).addTo(releatedUsageMap).bindPopup('new center');//center
+		
+		function getTags() {
+			return filteredItemClasses;
+		}
+
+		var gotoMapCenter = L.easyButton('fa-map-marker', function(btn, map) {
+			map.setView([-128.0, 128.0], 2);
+		}).addTo(releatedUsageMap);
+		
+		
+		var mapStateButton = L.easyButton({
+			states: [{
+				stateName: 'art-map',
+				icon:      'fas fa-map',
+				title:     'switch map style',
+				onClick: function(btn, map) {
+					osm.setUrl(mapUrl2);
+					btn.state('render-map');
+				}
+			}, {
+				stateName: 'render-map',
+				icon:      'far fa-map',
+				title:     'switch map style',
+				onClick: function(btn, map) {
+					osm.setUrl(mapUrl);
+					btn.state('art-map');
+				}
+			}]
+		});
+
+		mapStateButton.addTo(releatedUsageMap);
+		
+		var statusFilterButton = L.control
+			.tagFilterButton({
+				data: getTags,
+				filterOnEveryClick: true,
+				icon: '<img src="./dist/filter.png">',
+				onSelectionComplete: function(tags) {
+					console.log('selected tags are', tags);
+				}
+			})
+			.addTo(releatedUsageMap);
+		statusFilterButton._easyButton._currentState.onClick = function () {};//disable button click		
+		
+		shiftX = 0.0;
+//		divX = 525.0;
+		divX = 740.0;
+		addX = 128.0;
+		
+		shiftZ = 0.0;
+//		divZ = 560.0;
+		divZ = 740.0;
+		addZ = -128.0;
+		
+		let jsonRequestItemPos = new XMLHttpRequest();
+		
+		var itemPositions = [];
+		jsonRequestItemPos.onload = function () {
+			var markerList = [];
+			// Convert JSON data to an object
+			itemPositions = JSON.parse(this.response);
+			for (let elem of itemPositions) {
+				var itm = itemsInfo.find(el => el.item_class == elem.item_class);
+				let txt_ = itm.item_name;
+				if (itm.item_name !== itm.item_description) {
+					txt_ += " - " + itm.item_description;
+				}
+				txt_ += "<br/>";
+/*				for (var i = 0; i < itm.item_text.length; i++) {
+					if (itm.item_text[i] != undefined) {
+						txt_ += itm.item_text[i] + " ";
+					}
+					if (itm.item_count[i] != undefined) {
+						txt_ += itm.item_count[i];
+					}
+					txt_ += "<br/>";
+				}*/
+				if (itm.item_text[0] != undefined) {
+					txt_ += itm.item_text[0] + " ";
+					if (itm.item_count[0] != undefined) {
+						txt_ += itm.item_count[0];
+					}
+					txt_ += "<br/>";
+				}
+				if (itm.item_text[1] != undefined) {
+					txt_ += itm.item_text[1] + " ";
+					if (itm.item_count[1] != undefined) {
+						txt_ += itm.item_count[1];
+					}
+					txt_ += "<br/>";
+				}
+				if (itm.item_text[2] != undefined) {
+					txt_ += itm.item_text[2] + " ";
+					if (itm.item_count[2] != undefined) {
+						txt_ += itm.item_count[2];
+					}
+					txt_ += "<br/>";
+				}
+				if (itm.item_text[3] != undefined) {
+					txt_ += itm.item_text[3] + " ";
+					if (itm.item_count[3] != undefined) {
+						txt_ += itm.item_count[3];
+					}
+					txt_ += "<br/>";
+				}
+				if (itm.item_text[4] != undefined) {
+					txt_ += itm.item_text[4] + " ";
+					if (itm.item_count[4] != undefined) {
+						txt_ += itm.item_count[4];
+					}
+					txt_ += "<br/>";
+				}
+				if (itm.item_text[5] != undefined) {
+					txt_ += itm.item_text[5] + " ";
+					if (itm.item_count[5] != undefined) {
+						txt_ += itm.item_count[5];
+					}
+					txt_ += "<br/>";
+				}
+				
+				var customPopup = "<b style='color:gray !important;'>" + elem.item_class + "</b><br/>" + txt_ + "";
+//				mcg.addLayer(L.marker([(((elem.z + shiftZ) / divZ) + addZ), (((elem.x + shiftX) / divX) + addX)], { tags: [elem.item_class] }).bindPopup(customPopup));
+				var marker = L.marker([(((elem.z + shiftZ) / divZ) + addZ), (((elem.x + shiftX) / divX) + addX)], { tags: [elem.item_class] });
+				marker.bindPopup(customPopup);
+				markerList.push(marker);
+			}
+			mcg.addLayers(markerList);
+			// Enable MCG integration
+			statusFilterButton.enableMCG(mcg);
+			tagify.on('add', onAddTag).on('remove', onRemoveTag);//need to call last
+			tagifyTagsListUpdated();
+		}
+		
+		jsonRequestItemPos.open('GET', './dist/items_pos.json', true);
+//		jsonRequestItemPos.send();
+		
+		const defaultTags = ["item", "sword", "1h"];
+		
+		let jsonRequest = new XMLHttpRequest();
+		
+		var itemsInfo = [];
+		jsonRequest.onload = function () {
+			itemsInfo = JSON.parse(this.response);
+			whitelist = getTagsFromItemsList(itemsInfo);
+			tagify.settings.whitelist = whitelist;
+			tagify.addTags(defaultTags);
+///			jsonRequestItemPos.send();
+			setTimeout(() => {  
+				console.log("jsonRequestItemPos.send!"); 
+				jsonRequestItemPos.send();
+			}, 100);
+		}
+		
+		jsonRequest.open('GET', './dist/items_info.json', true);
+///		jsonRequest.send();
+		setTimeout(() => {  
+			console.log("jsonRequest.send!"); 
+			jsonRequest.send();
+		}, 100);
+
+
+
+		/////////////
+		//utils stuff
+		function sleep(ms) {
+			return new Promise(
+				resolve => setTimeout(resolve, ms)
+			);
+		}		
+		
+		// generate color based on text (in HSL format)
+		function getRandomColor(tagtext){		  
+			function makeHash(str) {
+				var hash = 0, i, chr;
+				for (i = 0; i < str.length; i++) {
+					chr   = str.charCodeAt(i);
+					hash  = ((hash << 5) + hash) + chr * 11351;
+					hash |= 0; // Convert to 32bit integer
+				}
+				return hash;
+			}
+			var s = 55|0,
+				l = 68|0;
+			return 'hsl(' + makeHash(tagtext.toLowerCase()) + ',' + s + '%,' + l + '%)';
+		}
+		
+		function getTagsFromItemsList(itemsList) {
+			var allTags = [];
+			for (let elem of itemsList) {
+				allTags = allTags.concat(elem.tags);
+			}
+			var uniqueTags = Array.from(new Set(allTags))
+			return uniqueTags;
+		}
+		
+		function filterItemsList(itemsList, tagsList) {
+			filteredItemsList = [];
+			for (let elem of itemsList) {
+///				if (elem.tags.some(r=> tagsList.includes(r))) {
+				if (tagsList.every(r=> elem.tags.includes(r))) {
+					filteredItemsList.push(elem);
+				}
+			}
+			return filteredItemsList;
+		}
+		
+		function getTagifyCurrentTagsList(tgf) {
+			tagsList = [];
+			for (let elem of tgf.value) {
+				tagsList.push(elem.value);
+			}
+			return tagsList;
+		}
+		
+		function getItemClassesList(itemsList) {
+			itemClasses = [];
+			for (let elem of itemsList) {
+				itemClasses.push(elem.item_class);
+			}
+			return itemClasses;
+		}
+
+    </script>
+</body>
+</html>
