@@ -1,5 +1,8 @@
-Gothic 2 Interactive Map.
+<h1>
+  <a href='https://alex-folts.github.io/Gothic2.Map'>Gothic 2 Interactive Map.</a>
+</h1>
 
+WIP.
 -item descriptions only RU so far.
 
 
