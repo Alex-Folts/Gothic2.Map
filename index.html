@@ -79,7 +79,16 @@
 	<script type="text/javascript" src="./dist/easy-button.js"></script>
 	<script type="text/javascript" src="./dist/leaflet-tag-filter-button.js"></script>
     <script type="text/javascript">
-
+	
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const paramTags = urlParams.get('tags');
+		
+		var tagsFromURL = [];
+		if (paramTags != undefined && paramTags != null) {
+			tagsFromURL = paramTags.split(",");
+		}
+		
 
 		////////////////////////////////////////////////
 		// Quick and dirty implementation of enableMCG
@@ -300,7 +309,7 @@
 				if (this.options.onSelectionComplete && typeof this.options.onSelectionComplete == 'function') {
 					this.options.onSelectionComplete.call(this, this._selectedTags);
 				}
-				console.log('filter:');
+//				console.log('filter:');
 			},
 		});
 
@@ -334,10 +343,15 @@
 			onAdd: function(map) {
 				var el = L.DomUtil.create('div', 'leaflet-bar my-control');
 				el.innerHTML = '<input name="input-custom-dropdown" value="item" placeholder="tags:">';
+				L.DomEvent.on(el, 'click dblclick mousedown mousemove', function (ev) {
+					L.DomEvent.stopPropagation(ev);
+					///console.log(ev);
+				});
 				return el;
 			},
 
 			onRemove: function(map) {
+				//L.DomEvent.off();
 				// Nothing to do here
 			}
 		});
@@ -346,9 +360,8 @@
 			return new L.Control.MyControl(opts);
 		}
 		
-		L.control.myControl({ position: 'topleft' }).addTo(releatedUsageMap);		
+		L.control.myControl({ position: 'topleft' }).addTo(releatedUsageMap);
 
-		
 		var filteredItems = [];
 		var filteredTags = [];
 		var filteredItemClasses = [];
@@ -361,7 +374,7 @@
 		var tagify = new Tagify(input, {
 			enforceWhitelist: true,
 			whitelist: whitelist,
-			maxTags: 10,
+			maxTags: 25,
 			dropdown: {
 				maxItems: 200,           // <- mixumum allowed rendered suggestions
 				classname: "tags-look", // <- custom classname for this dropdown, so it could be targeted
@@ -409,12 +422,24 @@
 		
 		//filter everything
 		function tagifyTagsListUpdated() {
-			filteredItems = filterItemsList(itemsInfo, getTagifyCurrentTagsList(tagify));
+			var currentTags = getTagifyCurrentTagsList(tagify);
+			filteredItems = filterItemsList(itemsInfo, currentTags);
 			filteredTags = getTagsFromItemsList(filteredItems);
 			tagify.settings.whitelist = filteredTags;
 			filteredItemClasses = getItemClassesList(filteredItems);
 			statusFilterButton._selectedTags = filteredItemClasses;
-			statusFilterButton.filter();	
+			statusFilterButton.filter();
+			
+			var newURL = window.location.origin + window.location.pathname;
+			if (currentTags.length > 0) {
+				newURL += "?tags=";
+				newURL += currentTags[0];
+				for (let i = 1; i < currentTags.length; i++) {
+					newURL += ",";
+					newURL += currentTags[i];
+				}
+			}
+			history.pushState(window.location.href, null, newURL);
 		}
 		
 ///		L.marker([-128.0, 128.0]).addTo(releatedUsageMap).bindPopup('new center');//center
@@ -422,6 +447,11 @@
 		function getTags() {
 			return filteredItemClasses;
 		}
+
+		var infoButton = L.easyButton('fas fa-info', function(btn, map) {
+				
+			}, { position: 'bottomright'} // topleft, topright, bottomleft, bottomright
+		).addTo(releatedUsageMap);
 
 		var gotoMapCenter = L.easyButton('fa-map-marker', function(btn, map) {
 			map.setView([-128.0, 128.0], 2);
@@ -457,7 +487,7 @@
 				filterOnEveryClick: true,
 				icon: '<img src="./dist/filter.png">',
 				onSelectionComplete: function(tags) {
-					console.log('selected tags are', tags);
+//					console.log('selected tags are', tags);
 				}
 			})
 			.addTo(releatedUsageMap);
@@ -564,10 +594,10 @@
 			itemsInfo = JSON.parse(this.response);
 			whitelist = getTagsFromItemsList(itemsInfo);
 			tagify.settings.whitelist = whitelist;
-			tagify.addTags(defaultTags);
+			tagify.addTags((tagsFromURL.length > 0) ? tagsFromURL : defaultTags);
 ///			jsonRequestItemPos.send();
 			setTimeout(() => {  
-				console.log("jsonRequestItemPos.send!"); 
+//				console.log("jsonRequestItemPos.send!"); 
 				jsonRequestItemPos.send();
 			}, 100);
 		}
@@ -575,7 +605,7 @@
 		jsonRequest.open('GET', './dist/items_info.json', true);
 ///		jsonRequest.send();
 		setTimeout(() => {  
-			console.log("jsonRequest.send!"); 
+//			console.log("jsonRequest.send!"); 
 			jsonRequest.send();
 		}, 100);
 
