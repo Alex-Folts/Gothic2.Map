@@ -12,5 +12,6 @@ WIP.
    * Leaflet.EasyButton: https://github.com/CliffCloud/Leaflet.EasyButton
    * leaflet-tag-filter-button: https://github.com/maydemirx/leaflet-tag-filter-button
    * Leaflet.markercluster: https://github.com/Leaflet/Leaflet.markercluster
+   * Leaflet.Dialog: https://github.com/NBTSolutions/Leaflet.Dialog
    * tagify: https://github.com/yairEO/tagify
    

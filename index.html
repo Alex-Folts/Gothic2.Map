@@ -16,9 +16,9 @@
 	
 	<link rel="stylesheet" href="./dist/fontawesome-free-5.15.1-web/css/all.css">
 
-	<script src="./dist/tagify-3.20.0/dist/tagify.min.js"></script>
-	<script src="./dist/tagify-3.20.0/dist/tagify.polyfills.min.js"></script>
 	<link href="./dist/tagify-3.20.0/dist/tagify.css" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" href="./dist/Leaflet.Dialog/Leaflet.Dialog.css" type="text/css" />
 	
     <style type="text/css">
         html, body, #map_container {
@@ -68,6 +68,69 @@
 		  background: lightyellow;
 		  border-color: black;
 		}
+
+		.btn {
+			border: none;
+			font-family: inherit;
+			font-size: inherit;
+			color: inherit;
+			background: none;
+			cursor: pointer;
+			padding: 25px 80px;
+			display: inline-block;
+			margin: 15px 30px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-weight: 700;
+			outline: none;
+			position: relative;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			transition: all 0.3s;
+		}
+
+		.btn-6 {
+			color: #fff;
+			background: #226fbe;
+			-webkit-transition: none;
+			-moz-transition: none;
+			transition: none;
+		}
+
+		.btn:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			transition: all 0.3s;
+		}
+
+		.btn-6:active {
+			top: 2px;
+		}
+
+		.btn-6f {
+			border: 2px dashed #226fbe;
+			border-radius: 60px;
+		}
+
+		.btn-6f:hover {
+			background: transparent;
+			color: #226fbe;
+		}
+
+		.btn-6e {
+			border: 1px dashed #00000000;
+			padding: 8px 8px;
+			margin: 4px 4px;
+			border-radius: 60px;
+		}
+
+		.btn-6e:hover {
+			border: 1px dashed #000000;
+			color: #226fbe;
+		}
     </style>
 </head>
 
@@ -78,6 +141,9 @@
     <script type="text/javascript" src="./dist/L.TileLayer.Zoomify.js"></script>  
 	<script type="text/javascript" src="./dist/easy-button.js"></script>
 	<script type="text/javascript" src="./dist/leaflet-tag-filter-button.js"></script>
+	<script type="text/javascript" src="./dist/Leaflet.Dialog/Leaflet.Dialog.js"></script>
+	<script type="text/javascript" src="./dist/tagify-3.20.0/dist/tagify.min.js"></script>
+	<script type="text/javascript" src="./dist/tagify-3.20.0/dist/tagify.polyfills.min.js"></script>
     <script type="text/javascript">
 	
 		const queryString = window.location.search;
@@ -448,8 +514,29 @@
 			return filteredItemClasses;
 		}
 
+		var docWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var docHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		var dialogW = docWidth / 3;
+		var dialogH = docHeight / 2.5;
+		var dialogOptions = {size: [dialogW, dialogH], maxSize: [dialogW, dialogH], anchor: [docHeight / 2 - dialogH / 2, docWidth / 2 - dialogW / 2], initOpen: false};
+		var dialogContents = ['<h2>Gothic 2 Interactive Map</h2>',
+								'<p>js libs used:</p>',
+								'<ul>',
+								'<li>Leaflet: <a href="https://github.com/Leaflet/Leaflet" target="_blank">https://github.com/Leaflet/Leaflet</a></li>',
+								'<li>Leaflet.Zoomify: <a href="https://github.com/turban/Leaflet.Zoomify" target="_blank">https://github.com/turban/Leaflet.Zoomify</a></li>',
+								'<li>Leaflet.EasyButton: <a href="https://github.com/CliffCloud/Leaflet.EasyButton" target="_blank">https://github.com/CliffCloud/Leaflet.EasyButton</a></li>',
+								'<li>leaflet-tag-filter-button: <a href="https://github.com/maydemirx/leaflet-tag-filter-button" target="_blank">https://github.com/maydemirx/leaflet-tag-filter-button</a></li>',
+								'<li>Leaflet.markercluster: <a href="https://github.com/Leaflet/Leaflet.markercluster" target="_blank">https://github.com/Leaflet/Leaflet.markercluster</a></li>',
+								'<li>Leaflet.Dialog: <a href="https://github.com/NBTSolutions/Leaflet.Dialog" target="_blank">https://github.com/NBTSolutions/Leaflet.Dialog</a></li>',
+								'<li>tagify: <a href="https://github.com/yairEO/tagify" target="_blank">https://github.com/yairEO/tagify</a></li>',
+								'</ul><br/><br/>',
+								'<p><a href="https://github.com/Alex-Folts/Gothic2.Map" target="_blank">Repository.</a></p>',
+								'<p><a href="https://github.com/Alex-Folts/Gothic2.Map/issues" target="_blank">Report bug or suggest feature.</a></p>'].join('');
+
+		var dialogInfo = L.control.dialog(dialogOptions).setContent(dialogContents).addTo(releatedUsageMap).hideResize();
+
 		var infoButton = L.easyButton('fas fa-info', function(btn, map) {
-				
+				dialogInfo.open();
 			}, { position: 'bottomright'} // topleft, topright, bottomleft, bottomright
 		).addTo(releatedUsageMap);
 
@@ -567,6 +654,10 @@
 						txt_ += itm.item_count[5];
 					}
 					txt_ += "<br/>";
+				}
+				
+				for (let itemTag of itm.tags) {
+					txt_ += `<button class='btn btn-6 btn-6e' style='background-color:${getRandomColor(itemTag)}' title=${itemTag} onclick='tagify.addTags("${itemTag}")'></button>`;
 				}
 				
 				var customPopup = "<b style='color:gray !important;'>" + elem.item_class + "</b><br/>" + txt_ + "";
