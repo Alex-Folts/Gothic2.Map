@@ -10,7 +10,7 @@
 		"item_value": 250,
 		"item_text": [null, null, "Защита от огня:", null, null, "Цена:"],
 		"item_count": [null, null, 15, null, null, 250],
-		"tags": ["item", "equipable", "jewelry", "amulet", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "protection", "prot fire"]
 	}, {
 		"item_class": "itam_prot_edge_01",
 		"item_name": "Амулет",
@@ -18,7 +18,7 @@
 		"item_value": 250,
 		"item_text": [null, null, "Защита от оружия:", null, null, "Цена:"],
 		"item_count": [null, null, 15, null, null, 250],
-		"tags": ["item", "equipable", "jewelry", "amulet", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "protection", "prot melee"]
 	}, {
 		"item_class": "itam_prot_point_01",
 		"item_name": "Амулет",
@@ -26,7 +26,7 @@
 		"item_value": 250,
 		"item_text": [null, null, "Защита от стрел:", null, null, "Цена:"],
 		"item_count": [null, null, 15, null, null, 250],
-		"tags": ["item", "equipable", "jewelry", "amulet", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "protection", "prot range"]
 	}, {
 		"item_class": "itam_prot_mage_01",
 		"item_name": "Амулет",
@@ -34,7 +34,7 @@
 		"item_value": 250,
 		"item_text": [null, null, "Защита от магии:", null, null, "Цена:"],
 		"item_count": [null, null, 15, null, null, 250],
-		"tags": ["item", "equipable", "jewelry", "amulet", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "protection", "prot magic"]
 	}, {
 		"item_class": "itam_prot_total_01",
 		"item_name": "Амулет",
@@ -42,7 +42,7 @@
 		"item_value": 750,
 		"item_text": [null, "Защита от огня:", "Защита от магии:", "Защита от стрел:", "Защита от оружия:", "Цена:"],
 		"item_count": [null, 15, 15, 15, 15, 750],
-		"tags": ["item", "equipable", "jewelry", "amulet", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itam_dex_01",
 		"item_name": "Амулет",
@@ -378,7 +378,7 @@
 		"item_value": 1100,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 40, 40, 0, 0, 1100],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_judge",
 		"item_name": "Мантия судьи",
@@ -386,7 +386,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_smith",
 		"item_name": "Одежда кузнеца",
@@ -394,7 +394,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_barkeeper",
 		"item_name": "Одежда горожанина",
@@ -402,7 +402,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_vlk_l",
 		"item_name": "Одежда горожанина",
@@ -410,7 +410,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_vlk_m",
 		"item_name": "Одежда горожанина",
@@ -418,7 +418,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_vlk_h",
 		"item_name": "Одежда горожанина",
@@ -426,7 +426,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_vlkbabe_l",
 		"item_name": "Одежда горожанина 1",
@@ -434,7 +434,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_vlkbabe_m",
 		"item_name": "Одежда горожанина 2",
@@ -442,7 +442,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_vlkbabe_h",
 		"item_name": "Одежда горожанина 3",
@@ -450,7 +450,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_mil_l",
 		"item_name": "Легкие доспехи ополчения",
@@ -458,7 +458,7 @@
 		"item_value": 600,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 40, 40, 5, 5, 600],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_mil_m",
 		"item_name": "Тяжелые доспехи ополчения",
@@ -466,7 +466,7 @@
 		"item_value": 2500,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 60, 60, 10, 10, 2500],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_pal_m",
 		"item_name": "Доспехи рыцаря",
@@ -474,7 +474,7 @@
 		"item_value": 5000,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 80, 80, 25, 25, 5000],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_pal_h",
 		"item_name": "Доспехи паладина",
@@ -482,7 +482,7 @@
 		"item_value": 20000,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 100, 100, 50, 50, 20000],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_bau_l",
 		"item_name": "Одежда фермера 1",
@@ -490,7 +490,7 @@
 		"item_value": 80,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 15, 15, 0, 0, 80],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_bau_m",
 		"item_name": "Одежда фермера 2",
@@ -498,7 +498,7 @@
 		"item_value": 100,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 15, 15, 0, 0, 100],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_baubabe_l",
 		"item_name": "Женская фермерская одежда 1",
@@ -506,7 +506,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_baubabe_m",
 		"item_name": "Женская фермерская одежда 2",
@@ -514,7 +514,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 10, 10, 0, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_sld_l",
 		"item_name": "Легкие доспехи наемника",
@@ -522,7 +522,7 @@
 		"item_value": 500,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 30, 30, 0, 0, 500],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_sld_m",
 		"item_name": "Средние доспехи наемника",
@@ -530,7 +530,7 @@
 		"item_value": 1000,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 45, 45, 5, 5, 1000],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_sld_h",
 		"item_name": "Тяжелые доспехи наемника",
@@ -538,7 +538,7 @@
 		"item_value": 2500,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 60, 60, 10, 10, 2500],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_djg_crawler",
 		"item_name": "Доспехи из панцирей краулеров",
@@ -546,7 +546,7 @@
 		"item_value": 1500,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 55, 50, 20, 15, 1500],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_djg_l",
 		"item_name": "Легкие доспехи охотника на драконов",
@@ -554,7 +554,7 @@
 		"item_value": 3000,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 70, 70, 40, 20, 3000],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_djg_m",
 		"item_name": "Средние доспехи охотника на драконов",
@@ -562,7 +562,7 @@
 		"item_value": 12000,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 80, 80, 50, 30, 12000],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_djg_h",
 		"item_name": "Тяжелые доспехи охотника на драконов",
@@ -570,7 +570,7 @@
 		"item_value": 20000,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 90, 90, 60, 40, 20000],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_djg_babe",
 		"item_name": "Женские доспехи охотника на драконов",
@@ -578,7 +578,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 60, 60, 30, 0, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire"]
 	}, {
 		"item_class": "itar_nov_l",
 		"item_name": "Роба послушника",
@@ -586,7 +586,7 @@
 		"item_value": 280,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 25, 25, 0, 10, 280],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot magic"]
 	}, {
 		"item_class": "itar_kdf_l",
 		"item_name": "Мантия мага огня",
@@ -594,7 +594,7 @@
 		"item_value": 500,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 40, 40, 20, 20, 500],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_kdf_h",
 		"item_name": "Тяжелая огненная мантия",
@@ -602,7 +602,7 @@
 		"item_value": 3000,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 80, 80, 40, 40, 3000],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_leather_l",
 		"item_name": "Кожаные доспехи",
@@ -610,7 +610,7 @@
 		"item_value": 250,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 25, 20, 5, 0, 250],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire"]
 	}, {
 		"item_class": "itar_bdt_m",
 		"item_name": "Средние доспехи бандита",
@@ -618,7 +618,7 @@
 		"item_value": 550,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 35, 35, 0, 0, 550],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_bdt_h",
 		"item_name": "Тяжелые доспехи бандита",
@@ -626,7 +626,7 @@
 		"item_value": 2100,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 45, 45, 0, 0, 2100],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_xardas",
 		"item_name": "Мантия черной магии",
@@ -634,7 +634,7 @@
 		"item_value": 15000,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 100, 100, 50, 50, 15000],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_lester",
 		"item_name": "Роба Лестера",
@@ -642,7 +642,7 @@
 		"item_value": 300,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 25, 25, 0, 0, 300],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_diego",
 		"item_name": "Доспехи Диего",
@@ -650,7 +650,7 @@
 		"item_value": 450,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 30, 30, 0, 0, 450],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "itar_corangar",
 		"item_name": "Доспехи Ангара",
@@ -658,7 +658,7 @@
 		"item_value": 600,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 70, 70, 35, 0, 600],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire"]
 	}, {
 		"item_class": "itar_dementor",
 		"item_name": "Мантия тьмы",
@@ -666,7 +666,7 @@
 		"item_value": 0,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 15, 40, 15, 15, 0],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_kdw_h",
 		"item_name": "Мантия мага воды",
@@ -674,7 +674,7 @@
 		"item_value": 450,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 80, 80, 40, 40, 450],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itar_prisoner",
 		"item_name": "Одежда каторжника",
@@ -682,7 +682,7 @@
 		"item_value": 10,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 20, 20, 0, 0, 10],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range"]
 	}, {
 		"item_class": "fakescroll",
 		"item_name": "Письмо",
@@ -2106,7 +2106,7 @@
 		"item_value": 3,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 3],
-		"tags": ["item", "consumable", "edible", "stackable", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "edible", "stackable", "restore", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpl_swampherb",
 		"item_name": "Болотная трава",
@@ -2522,7 +2522,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Защита от огня:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot fire"]
 	}, {
 		"item_class": "itri_prot_fire_02",
 		"item_name": "Кольцо",
@@ -2530,7 +2530,7 @@
 		"item_value": 200,
 		"item_text": [null, null, "Защита от огня:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 200],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot fire"]
 	}, {
 		"item_class": "itri_prot_point_01",
 		"item_name": "Кольцо",
@@ -2538,7 +2538,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Защита от стрел:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot range"]
 	}, {
 		"item_class": "itri_prot_point_02",
 		"item_name": "Кольцо",
@@ -2546,7 +2546,7 @@
 		"item_value": 200,
 		"item_text": [null, null, "Защита от стрел:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 200],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot range"]
 	}, {
 		"item_class": "itri_prot_edge_01",
 		"item_name": "Кольцо",
@@ -2554,7 +2554,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Защита от оружия:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot melee"]
 	}, {
 		"item_class": "itri_prot_edge_02",
 		"item_name": "Кольцо",
@@ -2562,7 +2562,7 @@
 		"item_value": 200,
 		"item_text": [null, null, "Защита от оружия:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 200],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot melee"]
 	}, {
 		"item_class": "itri_prot_mage_01",
 		"item_name": "Кольцо",
@@ -2570,7 +2570,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Защита от магии:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot magic"]
 	}, {
 		"item_class": "itri_prot_mage_02",
 		"item_name": "Кольцо",
@@ -2578,7 +2578,7 @@
 		"item_value": 200,
 		"item_text": [null, null, "Защита от магии:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 200],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot magic"]
 	}, {
 		"item_class": "itri_prot_total_01",
 		"item_name": "Кольцо",
@@ -2586,7 +2586,7 @@
 		"item_value": 250,
 		"item_text": [null, "Защита от магии:", "Защита от огня:", "Защита от стрел:", "Защита от оружия:", "Цена:"],
 		"item_count": [null, 5, 5, 5, 5, 250],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itri_prot_total_02",
 		"item_name": "Кольцо",
@@ -2594,7 +2594,7 @@
 		"item_value": 500,
 		"item_text": [null, "Защита от магии:", "Защита от огня:", "Защита от стрел:", "Защита от оружия:", "Цена:"],
 		"item_count": [null, 10, 10, 10, 10, 500],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itri_dex_01",
 		"item_name": "Кольцо",
@@ -3754,7 +3754,7 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "exp", "useable", "readable"]
 	}, {
 		"item_class": "itwr_pfandbrief_mis",
 		"item_name": "Закладная",
@@ -3802,7 +3802,7 @@
 		"item_value": 0,
 		"item_text": ["В Глазу пульсирует энергия."],
 		"item_count": [],
-		"tags": ["item", "equipable", "jewelry", "amulet", "misc", "quest", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "misc", "quest", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itmi_innoseye_discharged_mis",
 		"item_name": "Глаз Инноса",
@@ -4154,7 +4154,7 @@
 		"item_value": 0,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 0],
-		"tags": ["item", "quest", "useable", "readable", "book"]
+		"tags": ["item", "quest", "exp", "useable", "readable", "book"]
 	}, {
 		"item_class": "itwr_hallsofirdorath_open_mis",
 		"item_name": "Чертоги Ирдората",
@@ -4186,7 +4186,7 @@
 		"item_value": 50,
 		"item_text": ["", "", null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 50],
-		"tags": ["item", "quest", "useable", "readable", "map"]
+		"tags": ["item", "quest", "exp", "useable", "readable", "map"]
 	}, {
 		"item_class": "itwr_forgedshipletter_mis",
 		"item_name": "Корабельное свидетельство",
@@ -4234,7 +4234,7 @@
 		"item_value": 1000,
 		"item_text": [null, null, "Этот амулет защищает владельца", "от всех форм урона.", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 1000],
-		"tags": ["item", "equipable", "jewelry", "amulet", "quest", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "quest", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itpo_healrandolph_mis",
 		"item_name": "Зелье",
@@ -4401,7 +4401,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Защита от оружия:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "protection", "prot melee"]
 	}, {
 		"item_class": "itke_dexter",
 		"item_name": "Ключ",
@@ -4649,7 +4649,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Защита от стрел:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "jewelry", "ring", "quest", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "quest", "modify", "protection", "prot range"]
 	}, {
 		"item_class": "itmi_eddasstatue",
 		"item_name": "Статуя Инноса",
@@ -4689,7 +4689,7 @@
 		"item_value": 500,
 		"item_text": [null, "Защита от оружия:", "Защита от стрел:", "Защита от огня:", "Защита от магии:", "Цена:"],
 		"item_count": [null, 100, 100, 65, 100, 500],
-		"tags": ["item", "equipable", "armor", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "armor", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itke_valentino",
 		"item_name": "Ключ от сундука",
@@ -4785,7 +4785,7 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}, {
 		"item_class": "gold",
 		"item_name": "Ein Beutel voll Gold!",
@@ -4793,7 +4793,7 @@
 		"item_value": 0,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 0],
-		"tags": ["item", "misc", "useable"]
+		"tags": ["item", "misc", "useable", "test"]
 	}, {
 		"item_class": "hosh1",
 		"item_name": "Unsterblich",
@@ -4801,7 +4801,7 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}, {
 		"item_class": "hosh2",
 		"item_name": "Sterblich",
@@ -4809,7 +4809,7 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}, {
 		"item_class": "hosh3",
 		"item_name": "Sumpfdrache immortal klauen",
@@ -4817,7 +4817,7 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}, {
 		"item_class": "hosh4",
 		"item_name": "Sumpfdrache immortal machen",
@@ -4825,7 +4825,7 @@
 		"item_value": 0,
 		"item_text": ["Das Tagebuch von Hoshi", null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 0],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}, {
 		"item_class": "j1",
 		"item_name": "MIS_ReadyForChapter3 ",
@@ -4833,7 +4833,7 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}, {
 		"item_class": "j3",
 		"item_name": "chapter1",
@@ -4841,7 +4841,7 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}, {
 		"item_class": "djg_inserten",
 		"item_name": "JOLY_Storyhelpletter",
@@ -4849,7 +4849,7 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}, {
 		"item_class": "j2",
 		"item_name": "TEXT_Innoseye_Setting_Repaired",
@@ -4857,7 +4857,7 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}, {
 		"item_class": "j4",
 		"item_name": "B_Kapitelwechsel(5, OLDWORLD_ZEN )",
@@ -4865,6 +4865,6 @@
 		"item_value": 0,
 		"item_text": [],
 		"item_count": [],
-		"tags": ["item", "quest", "useable", "readable"]
+		"tags": ["item", "quest", "useable", "readable", "test"]
 	}
 ]
