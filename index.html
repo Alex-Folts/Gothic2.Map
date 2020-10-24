@@ -131,6 +131,43 @@
 			border: 1px dashed #000000;
 			color: #226fbe;
 		}
+
+		.collapsible {
+		  background-color: white;
+		  color: black;
+		  cursor: pointer;
+		  padding: 10px;
+		  width: 100%;
+		  border: none;
+		  text-align: left;
+		  outline: none;
+		  font-size: 14px;
+		}
+
+		.active, .collapsible:hover {
+		  background-color: #777;
+		  color: white;
+		}
+
+		.collapsible:after {
+		  content: '\002B';
+		  color: white;
+		  font-weight: bold;
+		  float: right;
+		  margin-left: 5px;
+		}
+
+		.active:after {
+		  content: "\2212";
+		}
+
+		.content {
+		  padding: 0 18px;
+		  max-height: 0;
+		  overflow: hidden;
+		  transition: max-height 0.2s ease-out;
+		  background-color: #f1f1f1;
+		}
     </style>
 </head>
 
@@ -506,6 +543,10 @@
 				}
 			}
 			history.pushState(window.location.href, null, newURL);
+
+			if (dialogItemsList._container.style.visibility != 'hidden') {
+				updateItemsListDialogContent();
+			}
 		}
 		
 ///		L.marker([-128.0, 128.0]).addTo(releatedUsageMap).bindPopup('new center');//center
@@ -543,7 +584,63 @@
 		var gotoMapCenter = L.easyButton('fa-map-marker', function(btn, map) {
 			map.setView([-128.0, 128.0], 2);
 		}).addTo(releatedUsageMap);
+
+		var dialogItemsListOpt = {size: [450, docHeight / 2], maxSize: [450, docHeight * 0.9], anchor: [112, 44], initOpen: false};
+		var dialogItemsList = L.control.dialog(dialogItemsListOpt).setContent("").addTo(releatedUsageMap).hideResize();
+		var toggleItemsList = L.easyButton('far fa-list-alt', function(btn, map) {
+			if (dialogItemsList._container.style.visibility != 'hidden') {
+				dialogItemsList.close();
+			} else {
+				updateItemsListDialogContent();
+				dialogItemsList.open();
+			}
+		}).addTo(releatedUsageMap);
 		
+		function updateItemsListDialogContent() {
+			var dialogCont = "";
+			dialogCont += "<div id='items_list'>";
+			for (let elem of filteredItems) {
+				//dialogCont += "<p>" + elem.item_description + "</p>";
+				dialogCont += "<button class='collapsible'>" + elem.item_description + "</button>";
+				dialogCont += "<div class='content'>";
+				let txt_ = "<b style='color:gray !important;'>" + elem.item_class + "</b><br/>" ;
+				txt_ += elem.item_name;
+				if (elem.item_name !== elem.item_description) {
+					txt_ += " - " + elem.item_description;
+				}
+				txt_ += "<br/>";
+				for (var i = 0; i < elem.item_text.length; i++) {
+					if (elem.item_text[i] != undefined) {
+						txt_ += elem.item_text[i] + " ";
+						if (elem.item_count[i] != undefined) {
+							txt_ += elem.item_count[i];
+						}
+						txt_ += "<br/>";
+					}
+				}				
+				for (let itemTag of elem.tags) {
+					txt_ += `<button class='btn btn-6 btn-6e' style='background-color:${getRandomColor(itemTag)}' title='${itemTag}' onclick='tagify.addTags("${itemTag}")'></button>`;
+				}
+				dialogCont += "<p>" + txt_ + "</p>";
+				dialogCont += "</div>";
+			}
+			dialogCont += "</div>";
+			dialogItemsList.setContent(dialogCont);
+
+			var coll = document.getElementsByClassName('collapsible');
+			var i;
+			for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener('click', function() {
+					this.classList.toggle('active');
+					var content = this.nextElementSibling;
+					if (content.style.maxHeight){
+						content.style.maxHeight = null;
+					} else {
+						content.style.maxHeight = content.scrollHeight + 'px';
+					} 
+				});
+			}
+		}		
 		
 		var mapStateButton = L.easyButton({
 			states: [{
@@ -657,7 +754,7 @@
 				}
 				
 				for (let itemTag of itm.tags) {
-					txt_ += `<button class='btn btn-6 btn-6e' style='background-color:${getRandomColor(itemTag)}' title=${itemTag} onclick='tagify.addTags("${itemTag}")'></button>`;
+					txt_ += `<button class='btn btn-6 btn-6e' style='background-color:${getRandomColor(itemTag)}' title='${itemTag}' onclick='tagify.addTags("${itemTag}")'></button>`;
 				}
 				
 				var customPopup = "<b style='color:gray !important;'>" + elem.item_class + "</b><br/>" + txt_ + "";
