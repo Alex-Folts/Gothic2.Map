@@ -50,7 +50,7 @@
 		"item_value": 300,
 		"item_text": [null, null, "Прибавка к ловкости:", null, null, "Цена:"],
 		"item_count": [null, null, 15, null, null, 300],
-		"tags": ["item", "equipable", "jewelry", "amulet", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "attribute", "dex"]
 	}, {
 		"item_class": "itam_strg_01",
 		"item_name": "Амулет",
@@ -58,7 +58,7 @@
 		"item_value": 300,
 		"item_text": [null, null, "Прибавка к силе:", null, null, "Цена:"],
 		"item_count": [null, null, 15, null, null, 300],
-		"tags": ["item", "equipable", "jewelry", "amulet", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "attribute", "str"]
 	}, {
 		"item_class": "itam_hp_01",
 		"item_name": "Амулет",
@@ -66,7 +66,7 @@
 		"item_value": 300,
 		"item_text": [null, null, "Прибавка к здоровью:", null, null, "Цена:"],
 		"item_count": [null, null, 15, null, null, 300],
-		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "hp"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "attribute", "hp"]
 	}, {
 		"item_class": "itam_mana_01",
 		"item_name": "Амулет",
@@ -74,7 +74,7 @@
 		"item_value": 300,
 		"item_text": [null, null, "Прибавка к мане:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 300],
-		"tags": ["item", "equipable", "magic", "jewelry", "amulet", "modify", "mana"]
+		"tags": ["item", "equipable", "magic", "jewelry", "amulet", "modify", "attribute", "mana"]
 	}, {
 		"item_class": "itam_dex_strg_01",
 		"item_name": "Амулет мощи",
@@ -82,7 +82,7 @@
 		"item_value": 500,
 		"item_text": [null, null, "Прибавка к ловкости:", "Прибавка к силе:", null, "Цена:"],
 		"item_count": [null, null, 10, 10, null, 500],
-		"tags": ["item", "equipable", "jewelry", "amulet", "modify"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "modify", "attribute", "str", "dex"]
 	}, {
 		"item_class": "itam_hp_mana_01",
 		"item_name": "Амулет просвещения",
@@ -90,7 +90,7 @@
 		"item_value": 500,
 		"item_text": [null, null, "Прибавка к здоровью:", "Прибавка к мане:", null, "Цена:"],
 		"item_count": [null, null, 10, 10, null, 500],
-		"tags": ["item", "equipable", "magic", "jewelry", "amulet", "modify", "hp", "mana"]
+		"tags": ["item", "equipable", "magic", "jewelry", "amulet", "modify", "attribute", "hp", "mana"]
 	}, {
 		"item_class": "itat_meatbugflesh",
 		"item_name": "Мясо жука",
@@ -98,7 +98,7 @@
 		"item_value": 10,
 		"item_text": ["", "Прибавка к здоровью:", "", "", null, "Цена:"],
 		"item_count": [null, 10, null, null, null, 10],
-		"tags": ["item", "consumable", "edible", "food", "trophy", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "trophy", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itat_sheepfur",
 		"item_name": "Овечья шкура",
@@ -114,7 +114,7 @@
 		"item_value": 10,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "trophy", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "trophy", "misc", "stackable"]
 	}, {
 		"item_class": "itat_bugmandibles",
 		"item_name": "Мандибулы полевого хищника",
@@ -154,7 +154,7 @@
 		"item_value": 15,
 		"item_text": ["Эти мандибулы можно открыть,", "чтобы выпить железы, находящиеся внутри.", "Они регенерируют вашу магическую энергию.", "Эффект снижается со временем.", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 15],
-		"tags": ["item", "consumable", "magic", "trophy", "misc", "stackable", "permanent", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "trophy", "misc", "stackable", "permanent", "attribute", "mana", "useable"]
 	}, {
 		"item_class": "itat_wing",
 		"item_name": "Крылья",
@@ -170,7 +170,7 @@
 		"item_value": 25,
 		"item_text": ["", "Это жало", "содержит яд.", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 25],
-		"tags": ["item", "consumable", "trophy", "misc", "stackable", "permanent", "hp", "useable"]
+		"tags": ["item", "consumable", "trophy", "misc", "stackable", "permanent", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itat_lurkerskin",
 		"item_name": "Шкура луркера",
@@ -242,7 +242,7 @@
 		"item_value": 300,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 300],
-		"tags": ["item", "trophy", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "trophy", "misc", "stackable"]
 	}, {
 		"item_class": "itat_shadowhorn",
 		"item_name": "Рог мракориса",
@@ -266,7 +266,7 @@
 		"item_value": 300,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 300],
-		"tags": ["item", "trophy", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "trophy", "misc", "stackable"]
 	}, {
 		"item_class": "itat_stonegolemheart",
 		"item_name": "Сердце каменного голема",
@@ -274,7 +274,7 @@
 		"item_value": 300,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 300],
-		"tags": ["item", "trophy", "misc", "quest", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "trophy", "misc", "quest", "stackable"]
 	}, {
 		"item_class": "itat_firegolemheart",
 		"item_name": "Сердце огненного голема",
@@ -298,7 +298,7 @@
 		"item_value": 10,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "trophy", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "trophy", "misc", "stackable"]
 	}, {
 		"item_class": "itat_skeletonbone",
 		"item_name": "Кость скелета",
@@ -306,7 +306,7 @@
 		"item_value": 10,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "trophy", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "trophy", "misc", "stackable"]
 	}, {
 		"item_class": "itat_demonheart",
 		"item_name": "Сердце демона",
@@ -314,7 +314,7 @@
 		"item_value": 300,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 300],
-		"tags": ["item", "trophy", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "trophy", "misc", "stackable"]
 	}, {
 		"item_class": "itat_undeaddragonsoulstone",
 		"item_name": "Камень души дракона-нежити",
@@ -330,7 +330,7 @@
 		"item_value": 400,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 400],
-		"tags": ["item", "trophy", "misc", "quest", "stackable"]
+		"tags": ["item", "reagent", "alchemy", "trophy", "misc", "quest", "stackable"]
 	}, {
 		"item_class": "itat_rockdragonheart",
 		"item_name": "Сердце каменного дракона",
@@ -338,7 +338,7 @@
 		"item_value": 400,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 400],
-		"tags": ["item", "trophy", "misc", "quest", "stackable"]
+		"tags": ["item", "reagent", "alchemy", "trophy", "misc", "quest", "stackable"]
 	}, {
 		"item_class": "itat_swampdragonheart",
 		"item_name": "Сердце болотного дракона",
@@ -346,7 +346,7 @@
 		"item_value": 400,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 400],
-		"tags": ["item", "trophy", "misc", "quest", "stackable"]
+		"tags": ["item", "reagent", "alchemy", "trophy", "misc", "quest", "stackable"]
 	}, {
 		"item_class": "itat_firedragonheart",
 		"item_name": "Сердце огненного дракона",
@@ -354,7 +354,7 @@
 		"item_value": 400,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 400],
-		"tags": ["item", "trophy", "misc", "quest", "stackable"]
+		"tags": ["item", "reagent", "alchemy", "trophy", "misc", "quest", "stackable"]
 	}, {
 		"item_class": "itat_dragonblood",
 		"item_name": "Драконья кровь",
@@ -362,7 +362,7 @@
 		"item_value": 200,
 		"item_text": ["", "", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 200],
-		"tags": ["item", "trophy", "misc", "quest", "stackable"]
+		"tags": ["item", "stock", "blacksmith", "trophy", "misc", "quest", "stackable"]
 	}, {
 		"item_class": "itat_dragonscale",
 		"item_name": "Чешуя дракона",
@@ -698,7 +698,7 @@
 		"item_value": 8,
 		"item_text": [null, "Прибавка к здоровью:", null, "Свежее яблоко,", "твердое и сочное.", "Цена:"],
 		"item_count": [null, 3, null, null, null, 8],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "permanent", "hp", "str", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "permanent", "attribute", "hp", "str", "useable"]
 	}, {
 		"item_class": "itfo_cheese",
 		"item_name": "Сыр",
@@ -706,7 +706,7 @@
 		"item_value": 30,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 15, null, null, null, 30],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_bacon",
 		"item_name": "Окорок",
@@ -714,7 +714,7 @@
 		"item_value": 50,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 20, null, null, null, 50],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_bread",
 		"item_name": "Хлеб",
@@ -722,7 +722,7 @@
 		"item_value": 20,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 10, null, null, null, 20],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_fish",
 		"item_name": "Рыба",
@@ -730,7 +730,7 @@
 		"item_value": 15,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 5, null, null, null, 15],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfomuttonraw",
 		"item_name": "Сырое мясо",
@@ -738,7 +738,7 @@
 		"item_value": 3,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 6, null, null, null, 3],
-		"tags": ["item", "consumable", "edible", "food", "trophy", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "trophy", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfomutton",
 		"item_name": "Жареное мясо",
@@ -746,7 +746,7 @@
 		"item_value": 6,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 12, null, null, null, 6],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_stew",
 		"item_name": "Похлебка",
@@ -754,7 +754,7 @@
 		"item_value": 8,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 20, null, null, null, 8],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_xpstew",
 		"item_name": "Похлебка Теклы",
@@ -762,7 +762,7 @@
 		"item_value": 8,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 20, null, null, null, 8],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "permanent", "hp", "str", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "permanent", "attribute", "hp", "str", "useable"]
 	}, {
 		"item_class": "itfo_coragonsbeer",
 		"item_name": "Пиво",
@@ -770,7 +770,7 @@
 		"item_value": 20,
 		"item_text": [null, "Прибавка к здоровью:", "Прибавка к мане:", null, "Особое пиво Корагона", "Цена:"],
 		"item_count": [null, 3, 1, null, null, 20],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "permanent", "hp", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "permanent", "attribute", "hp", "mana", "useable"]
 	}, {
 		"item_class": "itfo_fishsoup",
 		"item_name": "Уха",
@@ -778,7 +778,7 @@
 		"item_value": 20,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 10, null, null, null, 20],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_sausage",
 		"item_name": "Колбаса",
@@ -786,7 +786,7 @@
 		"item_value": 30,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 12, null, null, null, 30],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_honey",
 		"item_name": "Мед",
@@ -794,7 +794,7 @@
 		"item_value": 30,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 12, null, null, null, 30],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_water",
 		"item_name": "Вода",
@@ -802,7 +802,7 @@
 		"item_value": 10,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 8, null, null, null, 10],
-		"tags": ["item", "consumable", "edible", "drink", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_beer",
 		"item_name": "Пиво",
@@ -810,7 +810,7 @@
 		"item_value": 20,
 		"item_text": [null, "Прибавка к здоровью:", "Прибавка к мане:", null, "Черное паладинское", "Цена:"],
 		"item_count": [null, 3, 1, null, null, 20],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "hp", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "attribute", "hp", "mana", "useable"]
 	}, {
 		"item_class": "itfo_booze",
 		"item_name": "Джин",
@@ -818,7 +818,7 @@
 		"item_value": 15,
 		"item_text": [null, "Прибавка к здоровью:", "Прибавка к мане:", null, null, "Цена:"],
 		"item_count": [null, 4, 1, null, null, 15],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "hp", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "attribute", "hp", "mana", "useable"]
 	}, {
 		"item_class": "itfo_wine",
 		"item_name": "Вино",
@@ -826,7 +826,7 @@
 		"item_value": 20,
 		"item_text": [null, "Прибавка к здоровью:", "Прибавка к мане:", null, null, "Цена:"],
 		"item_count": [null, 2, 1, null, null, 20],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "hp", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "attribute", "hp", "mana", "useable"]
 	}, {
 		"item_class": "itfo_milk",
 		"item_name": "Молоко",
@@ -834,7 +834,7 @@
 		"item_value": 15,
 		"item_text": [null, "Прибавка к здоровью:", "Прибавка к мане:", null, null, "Цена:"],
 		"item_count": [null, 5, 1, null, null, 15],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "hp", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "stackable", "restore", "attribute", "hp", "mana", "useable"]
 	}, {
 		"item_class": "itke_lockpick",
 		"item_name": "Отмычка",
@@ -1282,7 +1282,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Урон", "Необходима сила:", "Одноручное оружие", "Цена:"],
 		"item_count": [null, null, 30, 20, null, 100],
-		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "require", "str", "damage"]
+		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "blacksmith", "result", "require", "str", "damage"]
 	}, {
 		"item_class": "itmw_stabkeule",
 		"item_name": "Палица",
@@ -1386,7 +1386,7 @@
 		"item_value": 600,
 		"item_text": [null, null, "Урон", "Необходима сила:", "Одноручное оружие", "Цена:"],
 		"item_count": [null, null, 45, 40, null, 600],
-		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "require", "str", "damage"]
+		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "blacksmith", "result", "require", "str", "damage"]
 	}, {
 		"item_class": "itmw_2h_special_01",
 		"item_name": "Двуручный рудный меч",
@@ -1394,7 +1394,7 @@
 		"item_value": 800,
 		"item_text": [null, null, "Урон", "Необходима сила:", "Двуручное оружие", "Цена:"],
 		"item_count": [null, null, 50, 50, null, 800],
-		"tags": ["item", "equipable", "weapon", "melee", "2h", "sword", "require", "str", "damage"]
+		"tags": ["item", "equipable", "weapon", "melee", "2h", "sword", "blacksmith", "result", "require", "str", "damage"]
 	}, {
 		"item_class": "itmw_rapier",
 		"item_name": "Рапира",
@@ -1482,7 +1482,7 @@
 		"item_value": 800,
 		"item_text": [null, null, "Урон", "Необходима сила:", "Одноручное оружие", "Цена:"],
 		"item_count": [null, null, 60, 50, null, 800],
-		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "require", "str", "damage"]
+		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "blacksmith", "result", "require", "str", "damage"]
 	}, {
 		"item_class": "itmw_2h_special_02",
 		"item_name": "Тяжелый двуручный рудный меч",
@@ -1490,7 +1490,7 @@
 		"item_value": 1000,
 		"item_text": [null, null, "Урон", "Необходима сила:", "Двуручное оружие", "Цена:"],
 		"item_count": [null, null, 70, 70, null, 1000],
-		"tags": ["item", "equipable", "weapon", "melee", "2h", "sword", "require", "str", "damage"]
+		"tags": ["item", "equipable", "weapon", "melee", "2h", "sword", "blacksmith", "result", "require", "str", "damage"]
 	}, {
 		"item_class": "itmw_elbastardo",
 		"item_name": "Эль-бастардо",
@@ -1578,7 +1578,7 @@
 		"item_value": 1000,
 		"item_text": [null, null, "Урон", "Необходима сила:", "Одноручное оружие", "Цена:"],
 		"item_count": [null, null, 75, 65, null, 1000],
-		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "require", "str", "damage"]
+		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "blacksmith", "result", "require", "str", "damage"]
 	}, {
 		"item_class": "itmw_2h_special_03",
 		"item_name": "Тяжелый рудный боевой клинок орков",
@@ -1586,7 +1586,7 @@
 		"item_value": 1200,
 		"item_text": [null, null, "Урон", "Необходима сила:", "Двуручное оружие", "Цена:"],
 		"item_count": [null, null, 90, 90, null, 1200],
-		"tags": ["item", "equipable", "weapon", "melee", "2h", "sword", "require", "str", "damage"]
+		"tags": ["item", "equipable", "weapon", "melee", "2h", "sword", "blacksmith", "result", "require", "str", "damage"]
 	}, {
 		"item_class": "itmw_berserkeraxt",
 		"item_name": "Топор берсеркера",
@@ -1610,7 +1610,7 @@
 		"item_value": 2200,
 		"item_text": [null, null, "Урон", "Необходима сила:", "Одноручное оружие", "Цена:"],
 		"item_count": [null, null, 90, 80, null, 2200],
-		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "require", "str", "damage"]
+		"tags": ["item", "equipable", "weapon", "melee", "1h", "sword", "blacksmith", "result", "require", "str", "damage"]
 	}, {
 		"item_class": "itmw_2h_special_04",
 		"item_name": "Большой рудный клинок 'Убийца драконов'",
@@ -1618,7 +1618,7 @@
 		"item_value": 2400,
 		"item_text": [null, null, "Урон", "Необходима сила:", "Двуручное оружие", "Цена:"],
 		"item_count": [null, null, 110, 100, null, 2400],
-		"tags": ["item", "equipable", "weapon", "melee", "2h", "sword", "require", "str", "damage"]
+		"tags": ["item", "equipable", "weapon", "melee", "2h", "sword", "blacksmith", "result", "require", "str", "damage"]
 	}, {
 		"item_class": "itmw_1h_blessed_01",
 		"item_name": "Грубый рудный клинок",
@@ -1682,7 +1682,7 @@
 		"item_value": 100,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 100],
-		"tags": ["item", "magic", "misc", "stackable"]
+		"tags": ["item", "magic", "ingredient", "runecraft", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_pliers",
 		"item_name": "Щипцы",
@@ -1698,7 +1698,7 @@
 		"item_value": 3,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 3],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "reagent", "alchemy", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_hammer",
 		"item_name": "Молот",
@@ -1746,7 +1746,7 @@
 		"item_value": 10,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "stock", "blacksmith", "misc", "stackable"]
 	}, {
 		"item_class": "itmiswordrawhot",
 		"item_name": "Раскаленная сталь",
@@ -1810,7 +1810,7 @@
 		"item_value": 30,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 30],
-		"tags": ["item", "consumable", "misc", "stackable", "useable"]
+		"tags": ["item", "consumable", "alchemy", "result", "misc", "stackable", "useable"]
 	}, {
 		"item_class": "itmi_packet",
 		"item_name": "Пакет",
@@ -1834,7 +1834,7 @@
 		"item_value": 200,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 200],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "stock", "blacksmith", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_gold",
 		"item_name": "Золото",
@@ -1842,7 +1842,7 @@
 		"item_value": 1,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 1],
-		"tags": ["item", "gold", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "gold", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_oldcoin",
 		"item_name": "Старая монета",
@@ -1994,7 +1994,7 @@
 		"item_value": 20,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 20],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "reagent", "ingredient", "alchemy", "runecraft", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_quartz",
 		"item_name": "Ледяной кварц",
@@ -2002,7 +2002,7 @@
 		"item_value": 20,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 20],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_pitch",
 		"item_name": "Смола",
@@ -2010,7 +2010,7 @@
 		"item_value": 10,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_rockcrystal",
 		"item_name": "Горный хрусталь",
@@ -2018,7 +2018,7 @@
 		"item_value": 30,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 30],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_aquamarine",
 		"item_name": "Аквамарин",
@@ -2026,7 +2026,7 @@
 		"item_value": 100,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 100],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_holywater",
 		"item_name": "Святая вода",
@@ -2034,7 +2034,7 @@
 		"item_value": 20,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 20],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_coal",
 		"item_name": "Уголь",
@@ -2042,7 +2042,7 @@
 		"item_value": 15,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 15],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "ingredient", "runecraft", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_darkpearl",
 		"item_name": "Черный жемчуг",
@@ -2050,7 +2050,7 @@
 		"item_value": 1000,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 1000],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "reagent", "ingredient", "alchemy", "runecraft", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_apfeltabak",
 		"item_name": "Яблочный табак",
@@ -2058,7 +2058,7 @@
 		"item_value": 10,
 		"item_text": [null, null, "Кисет с яблочным табаком.", null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "reagent", "alchemy", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_pilztabak",
 		"item_name": "Грибной табак",
@@ -2066,7 +2066,7 @@
 		"item_value": 10,
 		"item_text": [null, null, "Темный яблочно-грибной табак", null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "alchemy", "result", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_doppeltabak",
 		"item_name": "Двойное яблоко",
@@ -2082,7 +2082,7 @@
 		"item_value": 10,
 		"item_text": [null, null, "Сладкий яблочный табак", null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "alchemy", "result", "misc", "stackable"]
 	}, {
 		"item_class": "itmi_sumpftabak",
 		"item_name": "Травяной табак",
@@ -2090,7 +2090,7 @@
 		"item_value": 10,
 		"item_text": [null, null, "Смесь из болотной травы", null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "misc", "stackable"]
+		"tags": ["item", "alchemy", "result", "misc", "stackable"]
 	}, {
 		"item_class": "itpl_weed",
 		"item_name": "Сорняки",
@@ -2106,7 +2106,7 @@
 		"item_value": 3,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 3],
-		"tags": ["item", "consumable", "edible", "stackable", "restore", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "edible", "stackable", "restore", "attribute", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpl_swampherb",
 		"item_name": "Болотная трава",
@@ -2114,7 +2114,7 @@
 		"item_value": 10,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "consumable", "edible", "stackable", "useable", "plant"]
+		"tags": ["item", "consumable", "reagent", "ingredient", "edible", "alchemy", "runecraft", "stackable", "useable", "plant"]
 	}, {
 		"item_class": "itpl_mana_herb_01",
 		"item_name": "Огненная крапива",
@@ -2122,7 +2122,7 @@
 		"item_value": 10,
 		"item_text": [null, "Прибавка к мане:", null, null, null, "Цена:"],
 		"item_count": [null, 10, null, null, null, 10],
-		"tags": ["item", "consumable", "magic", "edible", "stackable", "restore", "mana", "useable", "plant"]
+		"tags": ["item", "consumable", "magic", "reagent", "edible", "alchemy", "stackable", "restore", "attribute", "mana", "useable", "plant"]
 	}, {
 		"item_class": "itpl_mana_herb_02",
 		"item_name": "Огненная трава",
@@ -2130,7 +2130,7 @@
 		"item_value": 20,
 		"item_text": [null, "Прибавка к мане:", null, null, null, "Цена:"],
 		"item_count": [null, 15, null, null, null, 20],
-		"tags": ["item", "consumable", "magic", "edible", "stackable", "restore", "mana", "useable", "plant"]
+		"tags": ["item", "consumable", "magic", "reagent", "edible", "alchemy", "stackable", "restore", "attribute", "mana", "useable", "plant"]
 	}, {
 		"item_class": "itpl_mana_herb_03",
 		"item_name": "Огненный корень",
@@ -2138,7 +2138,7 @@
 		"item_value": 40,
 		"item_text": [null, "Прибавка к мане:", null, null, null, "Цена:"],
 		"item_count": [null, 20, null, null, null, 40],
-		"tags": ["item", "consumable", "magic", "edible", "stackable", "restore", "mana", "useable", "plant"]
+		"tags": ["item", "consumable", "magic", "reagent", "edible", "alchemy", "stackable", "restore", "attribute", "mana", "useable", "plant"]
 	}, {
 		"item_class": "itpl_health_herb_01",
 		"item_name": "Лечебная трава",
@@ -2146,7 +2146,7 @@
 		"item_value": 20,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 10, null, null, null, 20],
-		"tags": ["item", "consumable", "edible", "stackable", "restore", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "reagent", "ingredient", "edible", "alchemy", "runecraft", "stackable", "restore", "attribute", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpl_health_herb_02",
 		"item_name": "Лечебное растение",
@@ -2154,7 +2154,7 @@
 		"item_value": 40,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 20, null, null, null, 40],
-		"tags": ["item", "consumable", "edible", "stackable", "restore", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "reagent", "ingredient", "edible", "alchemy", "runecraft", "stackable", "restore", "attribute", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpl_health_herb_03",
 		"item_name": "Лечебный корень",
@@ -2162,7 +2162,7 @@
 		"item_value": 60,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 30, null, null, null, 60],
-		"tags": ["item", "consumable", "edible", "stackable", "restore", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "reagent", "ingredient", "edible", "alchemy", "runecraft", "stackable", "restore", "attribute", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpl_dex_herb_01",
 		"item_name": "Гоблинские ягоды",
@@ -2170,7 +2170,7 @@
 		"item_value": 250,
 		"item_text": [null, "Прибавка к ловкости:", null, null, null, "Цена:"],
 		"item_count": [null, 1, null, null, null, 250],
-		"tags": ["item", "consumable", "edible", "stackable", "permanent", "dex", "useable", "plant"]
+		"tags": ["item", "consumable", "reagent", "edible", "alchemy", "stackable", "permanent", "attribute", "dex", "useable", "plant"]
 	}, {
 		"item_class": "itpl_strength_herb_01",
 		"item_name": "Драконий корень",
@@ -2178,7 +2178,7 @@
 		"item_value": 500,
 		"item_text": [null, "Прибавка к силе:", null, null, null, "Цена:"],
 		"item_count": [null, 1, null, null, null, 500],
-		"tags": ["item", "consumable", "edible", "stackable", "permanent", "str", "useable", "plant"]
+		"tags": ["item", "consumable", "reagent", "edible", "alchemy", "stackable", "permanent", "attribute", "str", "useable", "plant"]
 	}, {
 		"item_class": "itpl_speed_herb_01",
 		"item_name": "Снеппер-трава",
@@ -2186,7 +2186,7 @@
 		"item_value": 100,
 		"item_text": [null, null, null, "Длительность (сек)", null, "Цена:"],
 		"item_count": [null, null, null, 15, null, 100],
-		"tags": ["item", "consumable", "edible", "stackable", "useable", "plant"]
+		"tags": ["item", "consumable", "reagent", "edible", "alchemy", "stackable", "useable", "plant"]
 	}, {
 		"item_class": "itpl_mushroom_01",
 		"item_name": "Черный гриб",
@@ -2194,7 +2194,7 @@
 		"item_value": 10,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 5, null, null, null, 10],
-		"tags": ["item", "consumable", "magic", "edible", "stackable", "restore", "permanent", "hp", "mana", "useable", "plant"]
+		"tags": ["item", "consumable", "magic", "edible", "stackable", "restore", "permanent", "attribute", "hp", "mana", "useable", "plant"]
 	}, {
 		"item_class": "itpl_mushroom_02",
 		"item_name": "Пища рудокопа",
@@ -2202,7 +2202,7 @@
 		"item_value": 30,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 15, null, null, null, 30],
-		"tags": ["item", "consumable", "edible", "stackable", "restore", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "edible", "stackable", "restore", "attribute", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpl_blueplant",
 		"item_name": "Синяя бузина",
@@ -2210,7 +2210,7 @@
 		"item_value": 10,
 		"item_text": [null, "Прибавка к здоровью:", "Прибавка к мане:", null, null, "Цена:"],
 		"item_count": [null, 5, 5, null, null, 10],
-		"tags": ["item", "consumable", "magic", "edible", "stackable", "restore", "hp", "mana", "useable", "plant"]
+		"tags": ["item", "consumable", "magic", "edible", "stackable", "restore", "attribute", "hp", "mana", "useable", "plant"]
 	}, {
 		"item_class": "itpl_forestberry",
 		"item_name": "Лесная ягода",
@@ -2218,7 +2218,7 @@
 		"item_value": 10,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 5, null, null, null, 10],
-		"tags": ["item", "consumable", "edible", "stackable", "restore", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "edible", "stackable", "restore", "attribute", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpl_planeberry",
 		"item_name": "Луговая ягода",
@@ -2226,7 +2226,7 @@
 		"item_value": 10,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 5, null, null, null, 10],
-		"tags": ["item", "consumable", "edible", "stackable", "restore", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "edible", "stackable", "restore", "attribute", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpl_temp_herb",
 		"item_name": "Луговой горец",
@@ -2234,7 +2234,7 @@
 		"item_value": 100,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 5, null, null, null, 100],
-		"tags": ["item", "consumable", "edible", "quest", "stackable", "restore", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "reagent", "edible", "alchemy", "quest", "stackable", "restore", "attribute", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpl_perm_herb",
 		"item_name": "Царский щавель",
@@ -2242,7 +2242,7 @@
 		"item_value": 500,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 5, null, null, null, 500],
-		"tags": ["item", "consumable", "edible", "quest", "stackable", "restore", "hp", "useable", "plant"]
+		"tags": ["item", "consumable", "reagent", "edible", "alchemy", "quest", "stackable", "restore", "attribute", "hp", "useable", "plant"]
 	}, {
 		"item_class": "itpo_mana_01",
 		"item_name": "Зелье",
@@ -2250,7 +2250,7 @@
 		"item_value": 25,
 		"item_text": [null, "Прибавка к мане:", null, null, null, "Цена:"],
 		"item_count": [null, 50, null, null, null, 25],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "stackable", "restore", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "alchemy", "result", "stackable", "restore", "attribute", "mana", "useable"]
 	}, {
 		"item_class": "itpo_mana_02",
 		"item_name": "Зелье",
@@ -2258,7 +2258,7 @@
 		"item_value": 40,
 		"item_text": [null, "Прибавка к мане:", null, null, null, "Цена:"],
 		"item_count": [null, 75, null, null, null, 40],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "stackable", "restore", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "alchemy", "result", "stackable", "restore", "attribute", "mana", "useable"]
 	}, {
 		"item_class": "itpo_mana_03",
 		"item_name": "Зелье",
@@ -2266,7 +2266,7 @@
 		"item_value": 60,
 		"item_text": [null, "Прибавка к мане:", null, null, null, "Цена:"],
 		"item_count": [null, 100, null, null, null, 60],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "stackable", "restore", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "alchemy", "result", "stackable", "restore", "attribute", "mana", "useable"]
 	}, {
 		"item_class": "itpo_health_01",
 		"item_name": "Зелье",
@@ -2274,7 +2274,7 @@
 		"item_value": 25,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 50, null, null, null, 25],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "alchemy", "result", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itpo_health_02",
 		"item_name": "Зелье",
@@ -2282,7 +2282,7 @@
 		"item_value": 35,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 70, null, null, null, 35],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "alchemy", "result", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itpo_health_03",
 		"item_name": "Зелье",
@@ -2290,7 +2290,7 @@
 		"item_value": 50,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 100, null, null, null, 50],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "alchemy", "result", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itpo_perm_str",
 		"item_name": "Зелье",
@@ -2298,7 +2298,7 @@
 		"item_value": 800,
 		"item_text": [null, "Прибавка к силе:", null, null, null, "Цена:"],
 		"item_count": [null, 5, null, null, null, 800],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "stackable", "permanent", "str", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "alchemy", "result", "stackable", "permanent", "attribute", "str", "useable"]
 	}, {
 		"item_class": "itpo_perm_dex",
 		"item_name": "Зелье",
@@ -2306,7 +2306,7 @@
 		"item_value": 800,
 		"item_text": [null, "Прибавка к ловкости:", null, null, null, "Цена:"],
 		"item_count": [null, 5, null, null, null, 800],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "stackable", "permanent", "dex", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "alchemy", "result", "stackable", "permanent", "attribute", "dex", "useable"]
 	}, {
 		"item_class": "itpo_perm_health",
 		"item_name": "Зелье",
@@ -2314,7 +2314,7 @@
 		"item_value": 1500,
 		"item_text": [null, "Прибавка к макс. здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 15, null, null, null, 1500],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "stackable", "permanent", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "alchemy", "result", "stackable", "permanent", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itpo_perm_mana",
 		"item_name": "Зелье",
@@ -2322,7 +2322,7 @@
 		"item_value": 1500,
 		"item_text": [null, "Прибавка к макс. мане:", null, null, null, "Цена:"],
 		"item_count": [null, 10, null, null, null, 1500],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "stackable", "permanent", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "alchemy", "result", "stackable", "permanent", "attribute", "mana", "useable"]
 	}, {
 		"item_class": "itpo_speed",
 		"item_name": "Зелье",
@@ -2330,7 +2330,7 @@
 		"item_value": 200,
 		"item_text": [null, "Временно повышает скорость.", null, "Длительность (мин)", null, "Цена:"],
 		"item_count": [null, null, null, 5, null, 200],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "stackable", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "alchemy", "result", "stackable", "useable"]
 	}, {
 		"item_class": "itpo_megadrink",
 		"item_name": "Эмбарла фиргасто",
@@ -2338,7 +2338,7 @@
 		"item_value": 1800,
 		"item_text": [null, null, null, "Эффект неизвестен.", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 1800],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "stackable", "permanent", "mana", "str", "dex", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "alchemy", "result", "stackable", "permanent", "attribute", "mana", "str", "dex", "useable"]
 	}, {
 		"item_class": "itrw_arrow",
 		"item_name": "Стрела",
@@ -2602,7 +2602,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Прибавка к ловкости:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "attribute", "dex"]
 	}, {
 		"item_class": "itri_dex_02",
 		"item_name": "Кольцо",
@@ -2610,7 +2610,7 @@
 		"item_value": 200,
 		"item_text": [null, null, "Прибавка к ловкости:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 200],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "attribute", "dex"]
 	}, {
 		"item_class": "itri_hp_01",
 		"item_name": "Кольцо",
@@ -2618,7 +2618,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Прибавка к здоровью:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify", "hp"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "attribute", "hp"]
 	}, {
 		"item_class": "itri_hp_02",
 		"item_name": "Кольцо",
@@ -2626,7 +2626,7 @@
 		"item_value": 200,
 		"item_text": [null, null, "Прибавка к здоровью:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 200],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify", "hp"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "attribute", "hp"]
 	}, {
 		"item_class": "itri_str_01",
 		"item_name": "Кольцо",
@@ -2634,7 +2634,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Прибавка к силе:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "attribute", "str"]
 	}, {
 		"item_class": "itri_str_02",
 		"item_name": "Кольцо",
@@ -2642,7 +2642,7 @@
 		"item_value": 200,
 		"item_text": [null, null, "Прибавка к силе:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 200],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "attribute", "str"]
 	}, {
 		"item_class": "itri_mana_01",
 		"item_name": "Кольцо",
@@ -2650,7 +2650,7 @@
 		"item_value": 100,
 		"item_text": [null, null, "Прибавка к мане:", null, null, "Цена:"],
 		"item_count": [null, null, 5, null, null, 100],
-		"tags": ["item", "equipable", "magic", "jewelry", "ring", "modify", "mana"]
+		"tags": ["item", "equipable", "magic", "jewelry", "ring", "modify", "attribute", "mana"]
 	}, {
 		"item_class": "itri_mana_02",
 		"item_name": "Кольцо",
@@ -2658,7 +2658,7 @@
 		"item_value": 200,
 		"item_text": [null, null, "Прибавка к мане:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 200],
-		"tags": ["item", "equipable", "magic", "jewelry", "ring", "modify", "mana"]
+		"tags": ["item", "equipable", "magic", "jewelry", "ring", "modify", "attribute", "mana"]
 	}, {
 		"item_class": "itri_hp_mana_01",
 		"item_name": "Кольцо",
@@ -2666,7 +2666,7 @@
 		"item_value": 250,
 		"item_text": [null, null, "Прибавка к мане:", "Прибавка к здоровью:", null, "Цена:"],
 		"item_count": [null, null, 5, 5, null, 250],
-		"tags": ["item", "equipable", "magic", "jewelry", "ring", "modify", "hp", "mana"]
+		"tags": ["item", "equipable", "magic", "jewelry", "ring", "modify", "attribute", "hp", "mana"]
 	}, {
 		"item_class": "itri_dex_strg_01",
 		"item_name": "Кольцо",
@@ -2674,7 +2674,7 @@
 		"item_value": 250,
 		"item_text": [null, null, "Прибавка к силе:", "Прибавка к ловкости:", null, "Цена:"],
 		"item_count": [null, null, 4, 4, null, 250],
-		"tags": ["item", "equipable", "jewelry", "ring", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "modify", "attribute", "str", "dex"]
 	}, {
 		"item_class": "itru_pallight",
 		"item_name": "Руна",
@@ -2738,7 +2738,7 @@
 		"item_value": 500,
 		"item_text": ["Магия Паладинов", "Расход маны:", null, null, null, "Цена:"],
 		"item_count": [null, 5, null, null, null, 500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "mana", "paladin magic", "teleport"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "mana", "paladin magic", "teleport"]
 	}, {
 		"item_class": "itru_teleportseaport",
 		"item_name": "Руна",
@@ -2826,7 +2826,7 @@
 		"item_value": 500,
 		"item_text": ["Круг:", "Расход маны:", "Длительность (мин)", null, null, "Цена:"],
 		"item_count": [1, 1, 5, null, null, 500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 1", "mind"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 1", "mind"]
 	}, {
 		"item_class": "itru_firebolt",
 		"item_name": "Руна",
@@ -2834,7 +2834,7 @@
 		"item_value": 500,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [1, 5, 30, null, null, 500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 1", "fire"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 1", "fire"]
 	}, {
 		"item_class": "itru_zap",
 		"item_name": "Руна",
@@ -2842,7 +2842,7 @@
 		"item_value": 500,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [1, 6, 30, null, null, 500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 1", "lightning"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 1", "lightning"]
 	}, {
 		"item_class": "itru_lightheal",
 		"item_name": "Руна",
@@ -2850,7 +2850,7 @@
 		"item_value": 500,
 		"item_text": ["Круг:", "Расход маны:", "Лечение:", null, null, "Цена:"],
 		"item_count": [1, 5, 100, null, null, 500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "hp", "mana", "magic circle 1", "heal"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "hp", "mana", "magic circle 1", "heal"]
 	}, {
 		"item_class": "itru_sumgobskel",
 		"item_name": "Руна",
@@ -2858,7 +2858,7 @@
 		"item_value": 500,
 		"item_text": ["Круг:", "Расход маны:", "Блуждающие кости", "мертвых гоблинов.", null, "Цена:"],
 		"item_count": [1, 30, null, null, null, 500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 1", "summon"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 1", "summon"]
 	}, {
 		"item_class": "itru_instantfireball",
 		"item_name": "Руна",
@@ -2866,7 +2866,7 @@
 		"item_value": 1000,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [2, 10, 60, null, null, 1000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 2", "fire"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 2", "fire"]
 	}, {
 		"item_class": "itru_icebolt",
 		"item_name": "Руна",
@@ -2874,7 +2874,7 @@
 		"item_value": 1000,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [2, 7, 40, null, null, 1000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 2", "ice"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 2", "ice"]
 	}, {
 		"item_class": "itru_sumwolf",
 		"item_name": "Руна",
@@ -2882,7 +2882,7 @@
 		"item_value": 1000,
 		"item_text": ["Круг:", "Расход маны:", null, null, null, "Цена:"],
 		"item_count": [2, 30, null, null, null, 1000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 2", "summon"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 2", "summon"]
 	}, {
 		"item_class": "itru_windfist",
 		"item_name": "Руна",
@@ -2890,7 +2890,7 @@
 		"item_value": 1000,
 		"item_text": ["Круг:", "Расход маны (макс.):", "Максимальный урон", null, "Маны в секунду", "Цена:"],
 		"item_count": [2, 50, 60, null, 5, 1000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 2"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 2"]
 	}, {
 		"item_class": "itru_sleep",
 		"item_name": "Руна",
@@ -2898,7 +2898,7 @@
 		"item_value": 1000,
 		"item_text": ["Круг:", "Расход маны:", "Длительность (мин)", null, null, "Цена:"],
 		"item_count": [2, 10, 30, null, null, 1000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 2", "mind"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 2", "mind"]
 	}, {
 		"item_class": "itru_mediumheal",
 		"item_name": "Руна",
@@ -2906,7 +2906,7 @@
 		"item_value": 1500,
 		"item_text": ["Круг:", "Расход маны:", "Лечение:", null, null, "Цена:"],
 		"item_count": [3, 7, 200, null, null, 1500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "hp", "mana", "magic circle 3", "heal"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "hp", "mana", "magic circle 3", "heal"]
 	}, {
 		"item_class": "itru_lightningflash",
 		"item_name": "Руна",
@@ -2914,7 +2914,7 @@
 		"item_value": 2000,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [4, 20, 120, null, null, 2000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 4", "lightning"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 4", "lightning"]
 	}, {
 		"item_class": "itru_chargefireball",
 		"item_name": "Руна",
@@ -2922,7 +2922,7 @@
 		"item_value": 2000,
 		"item_text": ["Круг:", "Расход маны (макс.):", "Максимальный урон", null, "Маны в секунду", "Цена:"],
 		"item_count": [4, 75, 300, null, 8.333333333333334, 2000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 4", "fire"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 4", "fire"]
 	}, {
 		"item_class": "itru_sumskel",
 		"item_name": "Руна",
@@ -2930,7 +2930,7 @@
 		"item_value": 1500,
 		"item_text": ["Круг:", "Расход маны:", null, null, null, "Цена:"],
 		"item_count": [2, 30, null, null, null, 1500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 2", "summon"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 2", "summon"]
 	}, {
 		"item_class": "itru_fear",
 		"item_name": "Руна",
@@ -2938,7 +2938,7 @@
 		"item_value": 1500,
 		"item_text": ["Круг:", "Расход маны:", null, null, null, "Цена:"],
 		"item_count": [3, 15, null, null, null, 1500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 3", "mind"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 3", "mind"]
 	}, {
 		"item_class": "itru_icecube",
 		"item_name": "Руна",
@@ -2946,7 +2946,7 @@
 		"item_value": 1500,
 		"item_text": ["Круг:", "Расход маны:", "Урон", null, null, "Цена:"],
 		"item_count": [3, 20, 2, null, null, 1500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 3", "ice"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 3", "ice"]
 	}, {
 		"item_class": "itru_thunderball",
 		"item_name": "Руна",
@@ -2954,7 +2954,7 @@
 		"item_value": 1500,
 		"item_text": ["Круг:", "Расход маны (макс.):", "Максимальный урон", null, "Маны в секунду", "Цена:"],
 		"item_count": [3, 60, 180, null, 10, 1500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 3", "lightning"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 3", "lightning"]
 	}, {
 		"item_class": "itru_sumgol",
 		"item_name": "Руна",
@@ -2962,7 +2962,7 @@
 		"item_value": 2000,
 		"item_text": ["Круг:", "Расход маны:", null, null, null, "Цена:"],
 		"item_count": [4, 30, null, null, null, 2000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 4", "summon"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 4", "summon"]
 	}, {
 		"item_class": "itru_harmundead",
 		"item_name": "Руна",
@@ -2970,7 +2970,7 @@
 		"item_value": 2000,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [4, 40, 1000, null, null, 2000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 4"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 4"]
 	}, {
 		"item_class": "itru_pyrokinesis",
 		"item_name": "Руна",
@@ -2978,7 +2978,7 @@
 		"item_value": 2500,
 		"item_text": ["Круг:", "Расход маны (макс.):", "Максимальный урон", null, "Маны в секунду", "Цена:"],
 		"item_count": [5, 125, 300, null, 8.333333333333334, 2500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 5", "fire"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 5", "fire"]
 	}, {
 		"item_class": "itru_firestorm",
 		"item_name": "Руна",
@@ -2986,7 +2986,7 @@
 		"item_value": 1500,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [3, 20, 60, null, null, 1500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 3", "fire"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 3", "fire"]
 	}, {
 		"item_class": "itru_icewave",
 		"item_name": "Руна",
@@ -2994,7 +2994,7 @@
 		"item_value": 2500,
 		"item_text": ["Круг:", "Расход маны:", "Урон", null, null, "Цена:"],
 		"item_count": [5, 60, 2, null, null, 2500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 5", "ice"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 5", "ice"]
 	}, {
 		"item_class": "itru_sumdemon",
 		"item_name": "Руна",
@@ -3002,7 +3002,7 @@
 		"item_value": 2500,
 		"item_text": ["Круг:", "Расход маны:", null, null, null, "Цена:"],
 		"item_count": [5, 50, null, null, null, 2500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 5", "summon"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 5", "summon"]
 	}, {
 		"item_class": "itru_fullheal",
 		"item_name": "Руна",
@@ -3010,7 +3010,7 @@
 		"item_value": 2500,
 		"item_text": ["Круг:", "Расход маны:", "Лечение:", null, null, "Цена:"],
 		"item_count": [5, 15, 400, null, null, 2500],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "hp", "mana", "magic circle 5", "heal"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "hp", "mana", "magic circle 5", "heal"]
 	}, {
 		"item_class": "itru_firerain",
 		"item_name": "Руна",
@@ -3018,7 +3018,7 @@
 		"item_value": 3000,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [6, 60, 300, null, null, 3000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "area", "magic circle 6", "fire"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "area", "magic circle 6", "fire"]
 	}, {
 		"item_class": "itru_breathofdeath",
 		"item_name": "Руна",
@@ -3026,7 +3026,7 @@
 		"item_value": 3000,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [6, 50, 500, null, null, 3000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 6", "dark"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 6", "dark"]
 	}, {
 		"item_class": "itru_massdeath",
 		"item_name": "Руна",
@@ -3034,7 +3034,7 @@
 		"item_value": 3000,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [6, 150, 400, null, null, 3000],
-		"tags": ["item", "equipable", "magic", "rune", "quest", "drain", "require", "mana", "damage", "area", "magic circle 6", "dark"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "quest", "drain", "require", "mana", "damage", "area", "magic circle 6", "dark"]
 	}, {
 		"item_class": "itru_masterofdisaster",
 		"item_name": "Руна",
@@ -3042,7 +3042,7 @@
 		"item_value": 3000,
 		"item_text": ["Круг:", "Расход маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [6, 50, 300, null, null, 3000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "damage", "magic circle 6"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "damage", "magic circle 6"]
 	}, {
 		"item_class": "itru_armyofdarkness",
 		"item_name": "Руна",
@@ -3050,7 +3050,7 @@
 		"item_value": 3000,
 		"item_text": ["Круг:", "Расход маны:", null, null, null, "Цена:"],
 		"item_count": [6, 60, null, null, null, 3000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 6", "summon"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 6", "summon"]
 	}, {
 		"item_class": "itru_shrink",
 		"item_name": "Руна",
@@ -3058,7 +3058,7 @@
 		"item_value": 3000,
 		"item_text": ["Круг:", "Расход маны:", null, null, null, "Цена:"],
 		"item_count": [6, 100, null, null, null, 3000],
-		"tags": ["item", "equipable", "magic", "rune", "drain", "require", "mana", "magic circle 6", "mind"]
+		"tags": ["item", "equipable", "magic", "rune", "runecraft", "result", "drain", "require", "mana", "magic circle 6", "mind"]
 	}, {
 		"item_class": "itru_deathbolt",
 		"item_name": "Руна",
@@ -3146,7 +3146,7 @@
 		"item_value": 5,
 		"item_text": ["Свиток", "Необходимо маны:", "Длительность (мин)", null, null, "Цена:"],
 		"item_count": [null, 1, 5, null, null, 5],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "mind"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "mind"]
 	}, {
 		"item_class": "itsc_firebolt",
 		"item_name": "Свиток",
@@ -3154,7 +3154,7 @@
 		"item_value": 15,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [null, 5, 30, null, null, 15],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "fire"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "fire"]
 	}, {
 		"item_class": "itsc_icebolt",
 		"item_name": "Свиток",
@@ -3162,7 +3162,7 @@
 		"item_value": 80,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [null, 7, 40, null, null, 80],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "ice"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "ice"]
 	}, {
 		"item_class": "itsc_lightheal",
 		"item_name": "Свиток",
@@ -3170,7 +3170,7 @@
 		"item_value": 35,
 		"item_text": ["Свиток", "Необходимо маны:", "Лечение:", null, null, "Цена:"],
 		"item_count": [null, 5, 100, null, null, 35],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "hp", "mana", "heal"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "hp", "mana", "heal"]
 	}, {
 		"item_class": "itsc_sumgobskel",
 		"item_name": "Свиток",
@@ -3178,7 +3178,7 @@
 		"item_value": 50,
 		"item_text": ["Свиток", "Необходимо маны:", null, null, null, "Цена:"],
 		"item_count": [null, 10, null, null, null, 50],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "summon"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "summon"]
 	}, {
 		"item_class": "itsc_instantfireball",
 		"item_name": "Свиток",
@@ -3186,7 +3186,7 @@
 		"item_value": 75,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [null, 10, 60, null, null, 75],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "fire"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "fire"]
 	}, {
 		"item_class": "itsc_zap",
 		"item_name": "Свиток",
@@ -3194,7 +3194,7 @@
 		"item_value": 50,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [null, 6, 30, null, null, 50],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "mana", "damage", "lightning"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "mana", "damage", "lightning"]
 	}, {
 		"item_class": "itsc_sumwolf",
 		"item_name": "Свиток",
@@ -3202,7 +3202,7 @@
 		"item_value": 100,
 		"item_text": ["Свиток", "Необходимо маны:", null, null, null, "Цена:"],
 		"item_count": [null, 20, null, null, null, 100],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "summon"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "summon"]
 	}, {
 		"item_class": "itsc_windfist",
 		"item_name": "Свиток",
@@ -3210,7 +3210,7 @@
 		"item_value": 125,
 		"item_text": ["Свиток", "Расход маны (макс.):", "Максимальный урон", null, "Маны в секунду", "Цена:"],
 		"item_count": [null, 50, 60, null, 5, 125],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage"]
 	}, {
 		"item_class": "itsc_sleep",
 		"item_name": "Свиток",
@@ -3218,7 +3218,7 @@
 		"item_value": 150,
 		"item_text": ["Свиток", "Необходимо маны:", "Длительность (мин)", null, null, "Цена:"],
 		"item_count": [null, 10, 30, null, null, 150],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "mind"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "mind"]
 	}, {
 		"item_class": "itsc_charm",
 		"item_name": "Свиток",
@@ -3234,7 +3234,7 @@
 		"item_value": 175,
 		"item_text": ["Свиток", "Необходимо маны:", "Лечение:", null, null, "Цена:"],
 		"item_count": [null, 7, 200, null, null, 175],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "hp", "mana", "heal"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "hp", "mana", "heal"]
 	}, {
 		"item_class": "itsc_lightningflash",
 		"item_name": "Свиток",
@@ -3242,7 +3242,7 @@
 		"item_value": 275,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [null, 20, 120, null, null, 275],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "lightning"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "lightning"]
 	}, {
 		"item_class": "itsc_chargefireball",
 		"item_name": "Свиток",
@@ -3250,7 +3250,7 @@
 		"item_value": 300,
 		"item_text": ["Свиток", "Расход маны (макс.):", "Максимальный урон", null, "Маны в секунду", "Цена:"],
 		"item_count": [null, 75, 300, null, 8.333333333333334, 300],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "fire"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "fire"]
 	}, {
 		"item_class": "itsc_sumskel",
 		"item_name": "Свиток",
@@ -3258,7 +3258,7 @@
 		"item_value": 215,
 		"item_text": ["Свиток", "Необходимо маны:", null, null, null, "Цена:"],
 		"item_count": [null, 30, null, null, null, 215],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "summon"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "summon"]
 	}, {
 		"item_class": "itsc_fear",
 		"item_name": "Свиток",
@@ -3266,7 +3266,7 @@
 		"item_value": 225,
 		"item_text": ["Свиток", "Необходимо маны:", null, null, null, "Цена:"],
 		"item_count": [null, 15, null, null, null, 225],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "mind"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "mind"]
 	}, {
 		"item_class": "itsc_icecube",
 		"item_name": "Свиток",
@@ -3274,7 +3274,7 @@
 		"item_value": 250,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон", null, null, "Цена:"],
 		"item_count": [null, 20, 2, null, null, 250],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "ice"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "ice"]
 	}, {
 		"item_class": "itsc_thunderball",
 		"item_name": "Свиток",
@@ -3282,7 +3282,7 @@
 		"item_value": 250,
 		"item_text": ["Свиток", "Расход маны (макс.):", "Максимальный урон", null, "Маны в секунду", "Цена:"],
 		"item_count": [null, 60, 180, null, 10, 250],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "lightning"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "lightning"]
 	}, {
 		"item_class": "itsc_sumgol",
 		"item_name": "Свиток",
@@ -3290,7 +3290,7 @@
 		"item_value": 325,
 		"item_text": ["Свиток", "Необходимо маны:", null, null, null, "Цена:"],
 		"item_count": [null, 40, null, null, null, 325],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "summon"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "summon"]
 	}, {
 		"item_class": "itsc_harmundead",
 		"item_name": "Свиток",
@@ -3298,7 +3298,7 @@
 		"item_value": 350,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [null, 40, 1000, null, null, 350],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage"]
 	}, {
 		"item_class": "itsc_pyrokinesis",
 		"item_name": "Свиток",
@@ -3306,7 +3306,7 @@
 		"item_value": 500,
 		"item_text": ["Свиток", "Расход маны (макс.):", "Максимальный урон", null, "Маны в секунду", "Цена:"],
 		"item_count": [null, 125, 300, null, 8.333333333333334, 500],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "fire"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "fire"]
 	}, {
 		"item_class": "itsc_firestorm",
 		"item_name": "Свиток",
@@ -3314,7 +3314,7 @@
 		"item_value": 200,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [null, 20, 60, null, null, 200],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "fire"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "fire"]
 	}, {
 		"item_class": "itsc_icewave",
 		"item_name": "Свиток",
@@ -3322,7 +3322,7 @@
 		"item_value": 110,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон", null, null, "Цена:"],
 		"item_count": [null, 60, 2, null, null, 110],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "ice"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "ice"]
 	}, {
 		"item_class": "itsc_sumdemon",
 		"item_name": "Свиток",
@@ -3330,7 +3330,7 @@
 		"item_value": 425,
 		"item_text": ["Свиток", "Необходимо маны:", null, null, null, "Цена:"],
 		"item_count": [null, 50, null, null, null, 425],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "summon"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "summon"]
 	}, {
 		"item_class": "itsc_fullheal",
 		"item_name": "Свиток",
@@ -3338,7 +3338,7 @@
 		"item_value": 600,
 		"item_text": ["Свиток", "Необходимо маны:", "Лечение:", null, null, "Цена:"],
 		"item_count": [null, 15, 400, null, null, 600],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "hp", "mana", "heal"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "hp", "mana", "heal"]
 	}, {
 		"item_class": "itsc_firerain",
 		"item_name": "Свиток",
@@ -3346,7 +3346,7 @@
 		"item_value": 600,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон огнем", null, null, "Цена:"],
 		"item_count": [null, 60, 300, null, null, 600],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "damage", "area", "fire"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "damage", "area", "fire"]
 	}, {
 		"item_class": "itsc_breathofdeath",
 		"item_name": "Свиток",
@@ -3354,7 +3354,7 @@
 		"item_value": 650,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [null, 50, 500, null, null, 650],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "mana", "damage", "dark"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "mana", "damage", "dark"]
 	}, {
 		"item_class": "itsc_massdeath",
 		"item_name": "Свиток",
@@ -3362,7 +3362,7 @@
 		"item_value": 750,
 		"item_text": ["Свиток", "Необходимо маны:", "Урон магией", null, null, "Цена:"],
 		"item_count": [null, 150, 400, null, null, 750],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "mana", "damage", "area", "dark"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "mana", "damage", "area", "dark"]
 	}, {
 		"item_class": "itsc_armyofdarkness",
 		"item_name": "Свиток",
@@ -3370,7 +3370,7 @@
 		"item_value": 900,
 		"item_text": ["Свиток", "Необходимо маны:", null, null, null, "Цена:"],
 		"item_count": [null, 60, null, null, null, 900],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "summon"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "summon"]
 	}, {
 		"item_class": "itsc_shrink",
 		"item_name": "Свиток",
@@ -3378,7 +3378,7 @@
 		"item_value": 1000,
 		"item_text": ["Свиток", "Необходимо маны:", null, null, null, "Цена:"],
 		"item_count": [null, 100, null, null, null, 1000],
-		"tags": ["item", "equipable", "consumable", "magic", "scroll", "stackable", "drain", "require", "mana", "mind"]
+		"tags": ["item", "equipable", "consumable", "magic", "ingredient", "scroll", "runecraft", "stackable", "drain", "require", "mana", "mind"]
 	}, {
 		"item_class": "itsc_trfsheep",
 		"item_name": "Свиток",
@@ -3802,7 +3802,7 @@
 		"item_value": 0,
 		"item_text": ["В Глазу пульсирует энергия."],
 		"item_count": [],
-		"tags": ["item", "equipable", "jewelry", "amulet", "misc", "quest", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
+		"tags": ["item", "equipable", "jewelry", "amulet", "alchemy", "result", "misc", "quest", "modify", "protection", "prot melee", "prot range", "prot fire", "prot magic"]
 	}, {
 		"item_class": "itmi_innoseye_discharged_mis",
 		"item_name": "Глаз Инноса",
@@ -3810,7 +3810,7 @@
 		"item_value": 0,
 		"item_text": ["Глаз потух и не сияет."],
 		"item_count": [],
-		"tags": ["item", "equipable", "jewelry", "amulet", "misc", "quest", "modify"]
+		"tags": ["item", "equipable", "reagent", "jewelry", "amulet", "alchemy", "misc", "quest", "modify"]
 	}, {
 		"item_class": "itmi_innoseye_broken_mis",
 		"item_name": "Глаз Инноса",
@@ -3874,7 +3874,7 @@
 		"item_value": 25,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 50, null, null, null, 25],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "quest", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "quest", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itmw_malethsgehstock_mis",
 		"item_name": "Посох",
@@ -3938,7 +3938,7 @@
 		"item_value": 400,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 400],
-		"tags": ["item", "magic", "quest", "permanent", "mana", "useable", "readable", "book"]
+		"tags": ["item", "magic", "quest", "permanent", "attribute", "mana", "useable", "readable", "book"]
 	}, {
 		"item_class": "itpo_healobsession_mis",
 		"item_name": "Зелье",
@@ -3946,7 +3946,7 @@
 		"item_value": 25,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 50, null, null, null, 25],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "quest", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "quest", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itse_golemchest_mis",
 		"item_name": "Кожаный кошелек",
@@ -4050,7 +4050,7 @@
 		"item_value": 300,
 		"item_text": [null, null, "Прибавка к мане:", null, null, "Цена:"],
 		"item_count": [null, null, 10, null, null, 300],
-		"tags": ["item", "equipable", "magic", "jewelry", "amulet", "quest", "modify", "mana"]
+		"tags": ["item", "equipable", "magic", "jewelry", "amulet", "quest", "modify", "attribute", "mana"]
 	}, {
 		"item_class": "itmw_1h_ferrossword_mis",
 		"item_name": "Меч Фероса",
@@ -4098,7 +4098,7 @@
 		"item_value": 200,
 		"item_text": ["Это яйцо теплое, и изнутри", "доносится скребущийся звук.", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 200],
-		"tags": ["item", "trophy", "misc", "quest", "stackable"]
+		"tags": ["item", "reagent", "alchemy", "trophy", "misc", "quest", "stackable"]
 	}, {
 		"item_class": "itri_orcelitering",
 		"item_name": "Кольцо предводителей орков",
@@ -4106,7 +4106,7 @@
 		"item_value": 130,
 		"item_text": ["Это грубое кольцо кажется", "странно холодным.", "", "", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 130],
-		"tags": ["item", "equipable", "jewelry", "ring", "quest", "stackable", "modify"]
+		"tags": ["item", "equipable", "jewelry", "ring", "quest", "stackable", "modify", "attribute", "str"]
 	}, {
 		"item_class": "itpo_dragoneggdrinkneoras_mis",
 		"item_name": "Зелье",
@@ -4114,7 +4114,7 @@
 		"item_value": 50,
 		"item_text": [null, null, null, "Эффект неизвестен.", null, "Цена:"],
 		"item_count": [null, null, null, null, null, 50],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "quest", "stackable", "restore", "permanent", "hp", "str", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "quest", "stackable", "restore", "permanent", "attribute", "hp", "str", "useable"]
 	}, {
 		"item_class": "itwr_map_orcelite_mis",
 		"item_name": "Военная карта орков",
@@ -4218,7 +4218,7 @@
 		"item_value": 10,
 		"item_text": [null, "???", null, null, null, "Цена:"],
 		"item_count": [null, 50, null, null, null, 10],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "quest", "stackable", "restore", "permanent", "hp", "mana", "str", "dex", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "quest", "stackable", "restore", "permanent", "attribute", "hp", "mana", "str", "dex", "useable"]
 	}, {
 		"item_class": "itpo_potionofdeath_02_mis",
 		"item_name": "Зелье",
@@ -4226,7 +4226,7 @@
 		"item_value": 10,
 		"item_text": [null, "Это зелье наделяет магов Огня особыми способностями.", "Любой другой принявший его, найдет свою смерть.", null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 10],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "quest", "stackable", "restore", "permanent", "hp", "mana", "str", "dex", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "quest", "stackable", "restore", "permanent", "attribute", "hp", "mana", "str", "dex", "useable"]
 	}, {
 		"item_class": "itam_amulettofdeath_mis",
 		"item_name": "Божественная аура Инноса",
@@ -4242,7 +4242,7 @@
 		"item_value": 25,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 50, null, null, null, 25],
-		"tags": ["item", "consumable", "edible", "drink", "potion", "quest", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "drink", "potion", "quest", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itse_xardasnotfallbeutel_mis",
 		"item_name": "Очень странный кожаный кошелек",
@@ -4457,7 +4457,7 @@
 		"item_value": 0,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 20, null, null, null, 15],
-		"tags": ["item", "consumable", "food", "misc", "quest", "hp", "useable"]
+		"tags": ["item", "consumable", "food", "misc", "quest", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itfo_halvorfish_mis",
 		"item_name": "Странная рыба",
@@ -4569,7 +4569,7 @@
 		"item_value": 30,
 		"item_text": [null, "Прибавка к здоровью:", null, null, null, "Цена:"],
 		"item_count": [null, 12, null, null, null, 30],
-		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "hp", "useable"]
+		"tags": ["item", "consumable", "edible", "food", "stackable", "restore", "attribute", "hp", "useable"]
 	}, {
 		"item_class": "itpo_perm_littlemana",
 		"item_name": "Зелье",
@@ -4577,7 +4577,7 @@
 		"item_value": 150,
 		"item_text": [null, "Прибавка к макс. мане:", null, null, null, "Цена:"],
 		"item_count": [null, 3, null, null, null, 150],
-		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "stackable", "permanent", "mana", "useable"]
+		"tags": ["item", "consumable", "magic", "edible", "drink", "potion", "stackable", "permanent", "attribute", "mana", "useable"]
 	}, {
 		"item_class": "holy_hammer_mis",
 		"item_name": "Священный молот",
@@ -4753,7 +4753,7 @@
 		"item_value": 100,
 		"item_text": [null, null, null, null, null, "Цена:"],
 		"item_count": [null, null, null, null, null, 100],
-		"tags": ["item", "useable", "readable", "book"]
+		"tags": ["item", "quest", "useable", "readable", "book"]
 	}, {
 		"item_class": "itpl_sagitta_herb_mis",
 		"item_name": "Солнечное алоэ",
