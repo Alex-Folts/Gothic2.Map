@@ -578,27 +578,38 @@
 
 		var infoButton = L.easyButton('fas fa-info', function(btn, map) {
 				dialogInfo.open();
-			}, { position: 'bottomright'} // topleft, topright, bottomleft, bottomright
+			}, 'Open info', { position: 'bottomright'} // topleft, topright, bottomleft, bottomright
 		).addTo(releatedUsageMap);
 
-		var gotoMapCenter = L.easyButton('fa-map-marker', function(btn, map) {
+		var gotoMapCenterBtn = L.easyButton('fa-map-marker', function(btn, map) {
 			map.setView([-128.0, 128.0], 2);
-		}).addTo(releatedUsageMap);
+		}, 'To map center').addTo(releatedUsageMap);
 
 		var dialogItemsListOpt = {size: [450, docHeight / 2], maxSize: [450, docHeight * 0.9], anchor: [112, 44], initOpen: false};
 		var dialogItemsList = L.control.dialog(dialogItemsListOpt).setContent("").addTo(releatedUsageMap).hideResize();
-		var toggleItemsList = L.easyButton('far fa-list-alt', function(btn, map) {
+		var toggleItemsListBtn = L.easyButton('fas fa-list-alt', function(btn, map) {
 			if (dialogItemsList._container.style.visibility != 'hidden') {
 				dialogItemsList.close();
 			} else {
 				updateItemsListDialogContent();
 				dialogItemsList.open();
 			}
-		}).addTo(releatedUsageMap);
+		}, 'Items list').addTo(releatedUsageMap);
+		
+		var dialogRecipesListOpt = {size: [450, docHeight / 2], maxSize: [450, docHeight * 0.9], anchor: [156, 44], initOpen: false};
+		var dialogRecipesList = L.control.dialog(dialogRecipesListOpt).setContent("").addTo(releatedUsageMap).hideResize();
+		var toggleRecipesListBtn = L.easyButton('fas fa-clipboard-list', function(btn, map) {
+			if (dialogRecipesList._container.style.visibility != 'hidden') {
+				dialogRecipesList.close();
+			} else {
+				updateRecipesListDialogContent();
+				dialogRecipesList.open();
+			}
+		}, 'Recipes list').addTo(releatedUsageMap);
 		
 		function updateItemsListDialogContent() {
 			var dialogCont = "";
-			dialogCont += "<div id='items_list'>";
+			dialogCont += "<div id='items_list'>";//TODO: probably make const id
 			for (let elem of filteredItems) {
 				dialogCont += "<button class='collapsible'>" + elem.item_description + "</button>";
 				dialogCont += "<div class='content'>";
@@ -608,7 +619,8 @@
 			dialogCont += "</div>";
 			dialogItemsList.setContent(dialogCont);
 
-			var coll = document.getElementsByClassName('collapsible');
+			var rootEl = document.getElementById('items_list');//root div of the dialog content, should be only one
+			var coll = rootEl.getElementsByClassName('collapsible');
 			var i;
 			for (i = 0; i < coll.length; i++) {
 				coll[i].addEventListener('click', function() {
@@ -643,6 +655,48 @@
 				txt_ += `<button class='btn btn-6 btn-6e' style='background-color:${getRandomColor(itemTag)}' title='${itemTag}' onclick='tagify.addTags("${itemTag}")'></button>`;
 			}
 			return txt_;
+		}
+		
+		function updateRecipesListDialogContent() {
+			var dialogCont = "";
+			dialogCont += "<div id='recipes_list'>";//TODO: probably make const id
+			for (let recipe_ of recipesList) {
+				var itm = itemsInfo.find(el => el.item_class == recipe_.result_item_class);
+				var title_ = itm.item_name;
+				if (itm.item_name !== itm.item_description) {
+					title_ += " - " + itm.item_description;
+				}
+				dialogCont += "<button class='collapsible'>" + title_ + "</button>";
+				dialogCont += "<div class='content'>";
+				dialogCont += "<ul>";
+				for (let mat of recipe_.materials) {
+					var itm_ = itemsInfo.find(el => el.item_class == mat.item_class);
+					var title__ = itm_.item_name;
+					if (itm_.item_name !== itm_.item_description) {
+						title__ += " - " + itm_.item_description;
+					}
+					dialogCont += "<li><p>" + title__ + "</p></li>";
+				}
+				dialogCont += "</ul>";
+				dialogCont += "</div>";
+			}
+			dialogCont += "</div>";
+			dialogRecipesList.setContent(dialogCont);
+			
+			var rootEl = document.getElementById('recipes_list');//root div of the dialog content, should be only one
+			var coll = rootEl.getElementsByClassName('collapsible');
+			var i;
+			for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener('click', function() {
+					this.classList.toggle('active');
+					var content = this.nextElementSibling;
+					if (content.style.maxHeight){
+						content.style.maxHeight = null;
+					} else {
+						content.style.maxHeight = content.scrollHeight + 'px';
+					} 
+				});
+			}
 		}
 		
 		var mapStateButton = L.easyButton({
@@ -754,6 +808,14 @@
 //			console.log("jsonRequest.send!"); 
 			jsonRequest.send();
 		}, 100);
+
+		let jsonRequestRecipes = new XMLHttpRequest();
+		var recipesList = [];
+		jsonRequestRecipes.onload = function () {
+			recipesList = JSON.parse(this.response);
+		}
+		jsonRequestRecipes.open('GET', './dist/recipes.json', true);
+		jsonRequestRecipes.send();
 
 		statusFilterButton.enableMCG(mcg);
 
