@@ -176,6 +176,8 @@
 			background-position: 10px 8px;
 			background-repeat: no-repeat;
 			width: -webkit-fill-available;
+			width: -moz-available;
+			width: fill-available;
 			font-size: 14px;
 			padding: 10px 10px 10px 40px;
 			border: 1px solid #ddd;
@@ -189,7 +191,7 @@
 			margin: 0;
 		}
 
-		.leaflet-control-dialog-contents {
+		#dialog_items_list_cont {
 			padding: 0px 0px 40px 20px !important;
 			overflow: hidden !important;
 		}
@@ -197,6 +199,11 @@
 		#items_list {
 			overflow: auto;
 			height: 100%;
+		}
+		
+		.isolate_button {
+			vertical-align: -webkit-baseline-middle;
+			vertical-align: -moz-middle-with-baseline;
 		}
     </style>
 </head>
@@ -617,6 +624,7 @@
 
 		var dialogItemsListOpt = {size: [450, docHeight / 2], maxSize: [450, docHeight * 0.9], anchor: [112, 44], initOpen: false};
 		var dialogItemsList = L.control.dialog(dialogItemsListOpt).setContent("").addTo(releatedUsageMap).hideResize();
+		dialogItemsList._contentNode.id = "dialog_items_list_cont";
 		var toggleItemsListBtn = L.easyButton('fas fa-list-alt', function(btn, map) {
 			if (dialogItemsList._container.style.visibility != 'hidden') {
 				dialogItemsList.close();
@@ -672,7 +680,7 @@
 		}		
 		
 		function getItemDescriptionContent(itemInf) {
-			let txt_ = "<b style='color:gray !important;'>" + itemInf.item_class + "</b>" + `<button class='easy-button-button leaflet-bar-part leaflet-interactive' onclick='statusFilterButton._selectedTags = "${itemInf.item_class}"; statusFilterButton.filter();'><i class='fas fa-filter'></i></button>` + "<br/>" ;
+			let txt_ = "<b style='color:gray !important;'>" + itemInf.item_class + "</b><br/>" ;
 			txt_ += itemInf.item_name;
 			if (itemInf.item_name !== itemInf.item_description) {
 				txt_ += " - " + itemInf.item_description;
@@ -687,6 +695,7 @@
 					txt_ += "<br/>";
 				}
 			}
+			txt_ += `<button class='easy-button-button leaflet-bar-part leaflet-interactive isolate_button' onclick='statusFilterButton._selectedTags = "${itemInf.item_class}"; statusFilterButton.filter();'><i class='fas fa-filter'></i></button>`;
 			for (let itemTag of itemInf.tags) {
 				txt_ += `<button class='btn btn-6 btn-6e' style='background-color:${getRandomColor(itemTag)}' title='${itemTag}' onclick='tagify.addTags("${itemTag}")'></button>`;
 			}
