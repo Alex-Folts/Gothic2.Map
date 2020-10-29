@@ -168,6 +168,36 @@
 		  transition: max-height 0.2s ease-out;
 		  background-color: #f1f1f1;
 		}
+
+
+
+		#myInput {
+			background-image: url('./dist/searchicon.png');
+			background-position: 10px 8px;
+			background-repeat: no-repeat;
+			width: -webkit-fill-available;
+			font-size: 14px;
+			padding: 10px 10px 10px 40px;
+			border: 1px solid #ddd;
+			margin-bottom: 2px;
+			margin-left: -20px;
+		}
+
+		#myUL {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.leaflet-control-dialog-contents {
+			padding: 0px 0px 40px 20px !important;
+			overflow: hidden !important;
+		}
+
+		#items_list {
+			overflow: auto;
+			height: 100%;
+		}
     </style>
 </head>
 
@@ -609,13 +639,19 @@
 		
 		function updateItemsListDialogContent() {
 			var dialogCont = "";
+			dialogCont += "<input type='text' id='myInput' onkeyup='searchItemsList()' placeholder='Search for items...' title='Type in a item name'>";
 			dialogCont += "<div id='items_list'>";//TODO: probably make const id
+			dialogCont += "<ul id='myUL'>";
 			for (let elem of filteredItems) {
+				dialogCont += "<li>";
 				dialogCont += "<button class='collapsible'>" + elem.item_description + "</button>";
 				dialogCont += "<div class='content'>";
+				//dialogCont += "<button class='easy-button-button leaflet-bar-part leaflet-interactive'>i</button>";
 				dialogCont += "<p>" + getItemDescriptionContent(elem) + "</p>";
 				dialogCont += "</div>";
+				dialogCont += "</li>";
 			}
+			dialogCont += "</ul>";
 			dialogCont += "</div>";
 			dialogItemsList.setContent(dialogCont);
 
@@ -636,7 +672,7 @@
 		}		
 		
 		function getItemDescriptionContent(itemInf) {
-			let txt_ = "<b style='color:gray !important;'>" + itemInf.item_class + "</b><br/>" ;
+			let txt_ = "<b style='color:gray !important;'>" + itemInf.item_class + "</b>" + `<button class='easy-button-button leaflet-bar-part leaflet-interactive' onclick='statusFilterButton._selectedTags = "${itemInf.item_class}"; statusFilterButton.filter();'><i class='fas fa-filter'></i></button>` + "<br/>" ;
 			txt_ += itemInf.item_name;
 			if (itemInf.item_name !== itemInf.item_description) {
 				txt_ += " - " + itemInf.item_description;
@@ -655,6 +691,23 @@
 				txt_ += `<button class='btn btn-6 btn-6e' style='background-color:${getRandomColor(itemTag)}' title='${itemTag}' onclick='tagify.addTags("${itemTag}")'></button>`;
 			}
 			return txt_;
+		}
+		
+		function searchItemsList() {
+			var input, filter, ul, li, btn, i, txtValue;
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			ul = document.getElementById("myUL");
+			li = ul.getElementsByTagName("li");
+			for (i = 0; i < li.length; i++) {
+				btn = li[i].getElementsByTagName("button")[0];
+				txtValue = btn.textContent || btn.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					li[i].style.display = "";
+				} else {
+					li[i].style.display = "none";
+				}
+			}
 		}
 		
 		function updateRecipesListDialogContent() {
