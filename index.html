@@ -110,6 +110,18 @@
 			top: 2px;
 		}
 
+		/* Button 6b */
+		.btn-6b {
+			border: 4px solid #226fbe;
+			border-radius: 15px;
+		}
+
+		.btn-6b:hover {
+			background: transparent;
+			color: #226fbe;
+		}
+
+
 		.btn-6f {
 			border: 2px dashed #226fbe;
 			border-radius: 60px;
@@ -169,8 +181,6 @@
 		  background-color: #f1f1f1;
 		}
 
-
-
 		#myInput {
 			background-image: url('./dist/searchicon.png');
 			background-position: 10px 8px;
@@ -204,7 +214,21 @@
 		.isolate_button {
 			vertical-align: -webkit-baseline-middle;
 			vertical-align: -moz-middle-with-baseline;
+			padding: 4px;
+			margin: 4px;
+			margin-left: 0;
+			margin-right: 8px;
+			border: 1px solid black;
+			border-radius: 4px;
+			background: white;
+			color: black;
 		}
+		
+		.isolate_button:hover {
+			border: 1px dashed black;
+			color: black;
+		}
+
     </style>
 </head>
 
@@ -633,7 +657,7 @@
 				dialogItemsList.open();
 			}
 		}, 'Items list').addTo(releatedUsageMap);
-		
+
 		var dialogRecipesListOpt = {size: [450, docHeight / 2], maxSize: [450, docHeight * 0.9], anchor: [156, 44], initOpen: false};
 		var dialogRecipesList = L.control.dialog(dialogRecipesListOpt).setContent("").addTo(releatedUsageMap).hideResize();
 		var toggleRecipesListBtn = L.easyButton('fas fa-clipboard-list', function(btn, map) {
@@ -644,7 +668,18 @@
 				dialogRecipesList.open();
 			}
 		}, 'Recipes list').addTo(releatedUsageMap);
-		
+
+		var dialogChestsListOpt = {size: [450, docHeight / 2], maxSize: [450, docHeight * 0.9], anchor: [200, 44], initOpen: false};
+		var dialogChestsList = L.control.dialog(dialogChestsListOpt).setContent("").addTo(releatedUsageMap).hideResize();
+		var toggleChestsListBtn = L.easyButton('fas fa-clipboard-list', function(btn, map) {
+			if (dialogChestsList._container.style.visibility != 'hidden') {
+				dialogChestsList.close();
+			} else {
+				updateChestsListDialogContent();
+				dialogChestsList.open();
+			}
+		}, 'Chests list').addTo(releatedUsageMap);
+
 		function updateItemsListDialogContent() {
 			var dialogCont = "";
 			dialogCont += "<input type='text' id='myInput' onkeyup='searchItemsList()' placeholder='Search for items...' title='Type in a item name'>";
@@ -695,7 +730,7 @@
 					txt_ += "<br/>";
 				}
 			}
-			txt_ += `<button class='easy-button-button leaflet-bar-part leaflet-interactive isolate_button' onclick='statusFilterButton._selectedTags = "${itemInf.item_class}"; statusFilterButton.filter();'><i class='fas fa-filter'></i></button>`;
+			txt_ += `<button class='btn btn-6 btn-6b isolate_button' title='Isolate item' onclick='statusFilterButton._selectedTags = "${itemInf.item_class}"; statusFilterButton.filter();'><i class='fas fa-filter'></i></button>`;
 			for (let itemTag of itemInf.tags) {
 				txt_ += `<button class='btn btn-6 btn-6e' style='background-color:${getRandomColor(itemTag)}' title='${itemTag}' onclick='tagify.addTags("${itemTag}")'></button>`;
 			}
@@ -744,7 +779,7 @@
 			}
 			dialogCont += "</div>";
 			dialogRecipesList.setContent(dialogCont);
-			
+
 			var rootEl = document.getElementById('recipes_list');//root div of the dialog content, should be only one
 			var coll = rootEl.getElementsByClassName('collapsible');
 			var i;
@@ -760,7 +795,63 @@
 				});
 			}
 		}
-		
+
+		function updateChestsListDialogContent() {
+			var dialogCont = "";
+			dialogCont += "<div id='chests_list'>";//TODO: probably make const id
+			for (let chest_ of chestsInfoList) {
+				var title_ = chest_.script_id;
+				if (title_ === "") {
+					title_ = "Chest";
+				}
+				dialogCont += "<button class='collapsible'>" + title_ + "</button>";
+				dialogCont += "<div class='content'>";
+				if (chest_.is_locked) {
+					dialogCont += "<p><b style='color:gray !important;'>Locked</b></p>";
+				}
+				if (chest_.key_class != "") {
+					dialogCont += "<p>Key: " + "<b style='color:gray !important;'>" + chest_.key_class + "</b></p>";
+				}
+				if (chest_.picklock_sequence != "") {
+					dialogCont += "<p>Picklock sequence: " + "<b style='color:gray !important;'>" + chest_.picklock_sequence + "</b></p>";
+				}
+				dialogCont += "<p>Items:</p>";
+				dialogCont += "<ul>";
+				for (let itm of chest_.items_list) {
+					var itmInf = itemsInfo.find(el => el.item_class == itm.item_class);
+					if (itmInf == undefined) {
+						console.warn(itm);
+					} else {
+						var title__ = itmInf.item_name;
+						if (itmInf.item_name !== itmInf.item_description) {
+							title__ += " - " + itmInf.item_description;
+						}
+						title__ += " <b style='color:gray !important;'>x" + itm.quantity + "</b>";
+						dialogCont += "<li><p>" + title__ + "</p></li>";
+					}
+				}
+				dialogCont += "</ul>";
+				dialogCont += "</div>";
+			}
+			dialogCont += "</div>";
+			dialogChestsList.setContent(dialogCont);
+
+			var rootEl = document.getElementById('chests_list');//root div of the dialog content, should be only one
+			var coll = rootEl.getElementsByClassName('collapsible');
+			var i;
+			for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener('click', function() {
+					this.classList.toggle('active');
+					var content = this.nextElementSibling;
+					if (content.style.maxHeight){
+						content.style.maxHeight = null;
+					} else {
+						content.style.maxHeight = content.scrollHeight + 'px';
+					} 
+				});
+			}
+		}
+
 		var mapStateButton = L.easyButton({
 			states: [{
 				stateName: 'render-map',
@@ -878,6 +969,15 @@
 		}
 		jsonRequestRecipes.open('GET', './dist/recipes.json', true);
 		jsonRequestRecipes.send();
+
+		let requestChestsInfo = new XMLHttpRequest();
+		let chestsInfoList = [];
+		requestChestsInfo.onload = function () {
+			// Convert JSON data to an object
+			chestsInfoList = JSON.parse(this.response);
+		}
+		requestChestsInfo.open('GET', './dist/chest_info_nw.json', true);
+		requestChestsInfo.send();
 
 		statusFilterButton.enableMCG(mcg);
 
