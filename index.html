@@ -671,7 +671,7 @@
 
 		var dialogChestsListOpt = {size: [450, docHeight / 2], maxSize: [450, docHeight * 0.9], anchor: [200, 44], initOpen: false};
 		var dialogChestsList = L.control.dialog(dialogChestsListOpt).setContent("").addTo(releatedUsageMap).hideResize();
-		var toggleChestsListBtn = L.easyButton('fas fa-clipboard-list', function(btn, map) {
+		var toggleChestsListBtn = L.easyButton('fas fa-toolbox', function(btn, map) {
 			if (dialogChestsList._container.style.visibility != 'hidden') {
 				dialogChestsList.close();
 			} else {
