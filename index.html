@@ -800,10 +800,40 @@
 			var dialogCont = "";
 			dialogCont += "<div id='chests_list'>";//TODO: probably make const id
 			for (let chest_ of chestsInfoList) {
-				var title_ = chest_.script_id;
-				if (title_ === "") {
-					title_ = "Chest";
+				var title_ = "Chest";
+				title_ += "<span style='float:right; width: 55%;'>";
+				if (chest_.is_locked > 0) {
+					title_ += " <i class='fas fa-lock' style='color:gray; margin-right: 6px;'></i> ";
+				} else {
+					title_ += " <i class='fas fa-lock-open' style='color:gray; margin-right: 6px;'></i> ";
 				}
+				if (chest_.key_class != undefined && chest_.key_class !== "") {
+					title_ += " <i class='fas fa-key' style='color:gray; margin-right: 6px;'></i> ";
+				}
+				if (chest_.picklock_sequence != undefined && chest_.picklock_sequence !== "") {
+					title_ += " <i class='fab fa-keycdn' style='color:gray; margin-right: 6px;'></i> ";
+				}
+				if (chest_.items_list == undefined || chest_.items_list.length <= 0) {
+					title_ = "Empty " + title_;
+				} else {
+					var goldCount = 0;
+					var itemsCount = 0;
+					for (let itm of chest_.items_list) {
+						if (itm.item_class === "itmi_gold") {
+							goldCount += itm.quantity;
+						} else {
+							itemsCount += itm.quantity;//TODO: probably need to filter arrows/bolts as insignificant
+						}
+					}
+					if (goldCount > 0) {
+						title_ += " gold: " + goldCount + " ";
+					}
+					if (itemsCount > 0) {
+						title_ += " items: " + itemsCount + " ";
+///						title_ += "<span style='float:right;'>items: " + itemsCount + "</span>";
+					}
+				}
+				title_ += "</span>";
 				dialogCont += "<button class='collapsible'>" + title_ + "</button>";
 				dialogCont += "<div class='content'>";
 				if (chest_.is_locked) {
