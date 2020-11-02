@@ -772,6 +772,7 @@
 					if (itm_.item_name !== itm_.item_description) {
 						title__ += " - " + itm_.item_description;
 					}
+					title__ += " <b style='color:gray !important;'>x" + mat.count + "</b>";//TODO: maybe show only when count > 1
 					dialogCont += "<li><p>" + title__ + "</p></li>";
 				}
 				dialogCont += "</ul>";

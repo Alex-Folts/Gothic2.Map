@@ -26,7 +26,7 @@
 		"type": "alchemy",
 		"materials": [{
 				"item_class": "itpl_mana_herb_01",
-				"count": 1
+				"count": 2
 			}, {
 				"item_class": "itpl_temp_herb",
 				"count": 1
@@ -41,7 +41,7 @@
 		"type": "alchemy",
 		"materials": [{
 				"item_class": "itpl_mana_herb_02",
-				"count": 1
+				"count": 2
 			}, {
 				"item_class": "itpl_temp_herb",
 				"count": 1
@@ -56,7 +56,7 @@
 		"type": "alchemy",
 		"materials": [{
 				"item_class": "itpl_mana_herb_03",
-				"count": 1
+				"count": 2
 			}, {
 				"item_class": "itpl_temp_herb",
 				"count": 1
@@ -71,7 +71,7 @@
 		"type": "alchemy",
 		"materials": [{
 				"item_class": "itpl_health_herb_01",
-				"count": 1
+				"count": 2
 			}, {
 				"item_class": "itpl_temp_herb",
 				"count": 1
@@ -86,7 +86,7 @@
 		"type": "alchemy",
 		"materials": [{
 				"item_class": "itpl_health_herb_02",
-				"count": 1
+				"count": 2
 			}, {
 				"item_class": "itpl_temp_herb",
 				"count": 1
@@ -101,7 +101,7 @@
 		"type": "alchemy",
 		"materials": [{
 				"item_class": "itpl_health_herb_03",
-				"count": 1
+				"count": 2
 			}, {
 				"item_class": "itpl_temp_herb",
 				"count": 1
@@ -239,7 +239,7 @@
 		"type": "alchemy",
 		"materials": [{
 				"item_class": "itat_dragonegg_mis",
-				"count": 1
+				"count": 10
 			}, {
 				"item_class": "itmi_darkpearl",
 				"count": 1
@@ -278,7 +278,7 @@
 		"type": "blacksmith",
 		"materials": [{
 				"item_class": "itmi_nugget",
-				"count": 1
+				"count": 2
 			}, {
 				"item_class": "itmiswordraw",
 				"count": 1
@@ -290,7 +290,7 @@
 		"type": "blacksmith",
 		"materials": [{
 				"item_class": "itmi_nugget",
-				"count": 1
+				"count": 2
 			}, {
 				"item_class": "itmiswordraw",
 				"count": 1
@@ -302,7 +302,7 @@
 		"type": "blacksmith",
 		"materials": [{
 				"item_class": "itmi_nugget",
-				"count": 1
+				"count": 3
 			}, {
 				"item_class": "itmiswordraw",
 				"count": 1
@@ -314,7 +314,7 @@
 		"type": "blacksmith",
 		"materials": [{
 				"item_class": "itmi_nugget",
-				"count": 1
+				"count": 3
 			}, {
 				"item_class": "itmiswordraw",
 				"count": 1
@@ -326,7 +326,7 @@
 		"type": "blacksmith",
 		"materials": [{
 				"item_class": "itmi_nugget",
-				"count": 1
+				"count": 4
 			}, {
 				"item_class": "itmiswordraw",
 				"count": 1
@@ -338,10 +338,10 @@
 		"type": "blacksmith",
 		"materials": [{
 				"item_class": "itmi_nugget",
-				"count": 1
+				"count": 4
 			}, {
 				"item_class": "itat_dragonblood",
-				"count": 1
+				"count": 5
 			}, {
 				"item_class": "itmiswordraw",
 				"count": 1
@@ -353,10 +353,10 @@
 		"type": "blacksmith",
 		"materials": [{
 				"item_class": "itmi_nugget",
-				"count": 1
+				"count": 5
 			}, {
 				"item_class": "itat_dragonblood",
-				"count": 1
+				"count": 5
 			}, {
 				"item_class": "itmiswordraw",
 				"count": 1
