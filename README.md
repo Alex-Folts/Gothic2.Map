@@ -3,7 +3,8 @@
 </h1>
 
 WIP.
--item descriptions only RU so far.
+
+-only "new world" map so far.
 
 
 ## js libs used
@@ -14,4 +15,3 @@ WIP.
    * Leaflet.markercluster: https://github.com/Leaflet/Leaflet.markercluster
    * Leaflet.Dialog: https://github.com/NBTSolutions/Leaflet.Dialog
    * tagify: https://github.com/yairEO/tagify
-   
